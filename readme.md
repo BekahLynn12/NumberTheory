@@ -1,3 +1,7 @@
-# title
+# Number Theory
 
-## example1
+## To Activate Enviroment
+
+bash```
+conda activate nt
+```
