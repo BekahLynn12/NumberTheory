@@ -3,5 +3,6 @@
 ## To Activate Enviroment
 
 
+```bash
 conda activate nt
 ```
