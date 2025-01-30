@@ -1,0 +1,335 @@
+\documentclass[11pt]{article} 
+\usepackage[margin=1in]{geometry} 
+\usepackage{wrapfig, amsmath,amsthm,amssymb, graphicx, multicol, array,seqsplit}
+\usepackage{microtype,numprint}
+\usepackage{siunitx}
+\usepackage{paracol}
+\usepackage{blkarray,multirow,multicol,booktabs}
+\usepackage{hhline}
+\usepackage{xfrac}
+\usepackage{xcolor}
+\usepackage[makeroom]{cancel}
+\usepackage{listings}
+\setlength{\tabcolsep}{0pt}
+
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\F}{\mathbb{F}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\C}{\mathbb{C}}
+
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+
+%Code listing style named "mystyle"
+\lstdefinestyle{mystyle}{
+  backgroundcolor=\color{backcolour}, commentstyle=\color{codegreen},
+  keywordstyle=\color{magenta},
+  numberstyle=\tiny\color{codegray},
+  stringstyle=\color{codepurple},
+  basicstyle=\ttfamily\footnotesize,
+  breakatwhitespace=false,         
+  breaklines=true,                 
+  captionpos=b,                    
+  keepspaces=true,                 
+  numbers=left,                    
+  numbersep=5pt,                  
+  showspaces=false,                
+  showstringspaces=false,
+  showtabs=false,                  
+  tabsize=2
+}
+
+%"mystyle" code listing set
+\lstset{style=mystyle}
+
+ \newcommand\foo[2]{%
+    \begin{minipage}{#1}
+    \seqsplit{#2}
+    \end{minipage}
+    }
+\newenvironment{myproof}[1][\proofname]{%
+  \begin{proof}[#1]$ $\par\nobreak\ignorespaces
+}{%
+  \end{proof}
+}
+\newenvironment{problem}[2][Problem]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+
+\newenvironment{solution}
+  {\renewcommand\qedsymbol{$~$}\begin{proof}[Solution]$ $\par\nobreak\ignorespaces}
+  {\end{proof}}
+
+
+\begin{document}
+
+\title{Homework 1}
+\author{Rebekah Mayne\\
+  Math 370, Fall 2024}
+\maketitle
+
+
+\section{Class Questions}
+
+\begin{problem}{1}
+How many zeroes are at the end of $1000!$
+\end{problem}
+
+\begin{solution}
+  The number of multiples of 5's less than 1000 is the same a the number of 0s at the end of $1000!$ as every multiple of 10
+  will add a 0 automatically, and every multiple of 5 but not 10, just needs an even number to make a multple of 10, and there
+  will be more even numbers than 5's. Then 1000/5=200. So the number of zeros at the end of $1000!$ is \textbf{200}.
+\end{solution}
+
+
+
+\section{Page 9 Problems}
+
+\begin{problem}{2}
+Calculate (3141) and (10001,100083).
+\end{problem}
+
+\begin{solution}
+  Using the Euclidean algorithm we can see
+  \begin{align*}
+    100083 & = (10001)(10)+ 73 \\
+    10001  & = (73)(137) + 0   \\
+  \end{align*}
+  So $(10001,100083)=73$.
+\end{solution}
+
+
+\begin{problem}{4}
+Find $x$ and $y$ such that $4144x+7696y=592$.
+\end{problem}
+
+\begin{solution}
+  Diving by the GCD we get
+  \begin{align*}
+    4144x+7696y & =592 \\
+    7x + 13y    & = 1
+  \end{align*}
+  Then, use UA
+  \begin{align*}
+    13 & = 7(1)+6   \\
+    7  & = 6(1) + 1 \\
+    6  & = 1(6) + 0 \\
+  \end{align*}
+  Then, doing it back we get
+  \begin{align*}
+    1   & = 7 - 6(1)           \\
+    1   & = 7 - (13-7(1))      \\
+    1   & = 7 - 13 + 7         \\
+    1   & = 7(2) + 13(-1)      \\
+    \intertext{Multiply by 592 and we get,}
+    592 & = 4144(2) + 7696(-1) \\
+  \end{align*}
+  So an integer solution would be $x=2$ and $y=-1$.
+\end{solution}
+
+
+
+\begin{problem}{5}
+If $N=abc+1$, prove that $(N,a)=(N,b)=(N,c)=1$.
+\end{problem}
+
+\begin{myproof}
+  Let $N=abc+1$. WLOG, $(N,a)= d$ and assume to the contrary that $d\neq 1$. This would mean that $d|N$ and $d|a$, then $\exists k$ where $N=dk$ and $\exists m$ where $a=dm$ meaning that
+  \begin{align*}
+    N  & = abc +1     \\
+    dk & = abc+ 1     \\
+    dk & = d(mbc) + 1 \\
+  \end{align*}
+  But we can see that $d|1$ must be true, meaning that $d=1$ which is a contradiction. This means that $(N,a)=(N,b)=(N,c)=1$.
+\end{myproof}
+
+
+\begin{problem}{6}
+Find two different solutions of $299x+247y=13$.
+\end{problem}
+
+\begin{solution}
+  Dividing by the GCD, we can get the following
+  \begin{align*}
+    299x+ 247y & = 13 \\
+    23x + 19y  & = 1  \\
+  \end{align*}
+  Then using $y=t$ and $x=\frac{1-23t}{19}$, we can see $t=5$ would have an integer solutoins. So a solution for this would be $x=-6$ and $y=5$.
+\end{solution}
+
+
+
+\begin{problem}{7}
+Prove that if $a|b$ and $b|a$ then $a=b$ or $a=-b$.
+\end{problem}
+
+\begin{proof}
+  Let $a|b$ and $b|a$, this means that $\exists m,n in \N$ s.t. $bm=a$ and $an=b$, then
+  \begin{align*}
+    bm  & = a \\
+    anm & = a \\
+    nm  & = 1 \\
+  \end{align*}
+  But this means that $m,n=\pm 1$. So $a=b$ or $a=-b$.
+\end{proof}
+
+
+
+\begin{problem}{9}
+Prove that $((a,b),b)=(a,b)$.
+\end{problem}
+
+\begin{solution}
+  Let $((a,b),b)=d$. This means that $d|(a,b)$ and $d|b$. Let $(a,b)=c$, meaning that $c|a$ and $c|b$. We can see that $d|c$ and $d|b$, since $d|c$ and $c|a$ we know that $d|a$ and $d|b$. But since $(a,b)=c$ this means that $d\leq c$. However, since $d|c$ this means that $d=c$, so $((a,b),b)=(a,b)$.
+\end{solution}
+
+
+
+\begin{problem}{12}
+Prove: If $a|b$ and $c|d$, then $ac|bd$.
+\end{problem}
+
+\begin{proof}
+  Let $a|b$ and $c|d$, this then means that $\exists i,j$ s.t. $ai=b$ and $cj=d$. Then do the following,
+  \begin{align*}
+    cj     & = d  \\
+    (cj)b  & = bd \\
+    (cj)ai & = bd \\
+    ac(ij) & = bd \\
+  \end{align*}
+  Which is the definition of $ac|bd$.
+\end{proof}
+
+
+
+
+\begin{problem}{13}
+Prove: If $d|a$ and $d|b$ then $d^2|ab$.
+\end{problem}
+
+\begin{proof}
+  Let $d|a$ and $d|b$, this then means that $\exists i,j \in \N$ s.t. $di=a$ and $dj=b$. Then do the following,
+  \begin{align*}
+    di       & = a  \\
+    b(di)    & = ab \\
+    (dj)(di) & = ab \\
+    d^2 (ij) & = ab \\
+  \end{align*}
+  Which is the definition of $d^2|ab$.
+\end{proof}
+
+
+
+
+\begin{problem}{14}
+Prove: If $c|ab$ and $(c,a)=d$, then $c|db$.
+\end{problem}
+
+\begin{proof}
+  Let $c|ab$ and $(c,a)=d$. $c|ab$ means that $\exists n\in\N$ s.t. $cn=ab$. Then ${c,a}=d$ means that $\exists i,j\in\N$ s.t. $d(i)=c$ and $d(j)=a$ and any other divisor of $c$ and $a$ are $\leq d$.
+
+  It follows that $d|ab$. Since $c|ab$
+
+  Then assume $j\nmid c$, that would mean that
+
+
+  %c(i) = db
+
+\end{proof}
+
+
+
+\begin{problem}{15} ~\\
+\begin{itemize}
+  \item [(a)] If $x^2+ax+b=0$ has an integer root, show that it divides $b$.
+  \item [(b)] If $x^2+ax+b=0$ has a rational root, show that it is in fact an integer.
+\end{itemize}
+\end{problem}
+
+\begin{solution}
+  \begin{itemize}
+    \item [(a)]
+    \item [(b)]
+  \end{itemize}
+\end{solution}
+
+
+
+\section{Page 19 Problems}
+
+
+
+\begin{problem}{2}
+Find the prime-power decompositions of 2345, 45670, and 999999999999. (Note that $101|1000001$).
+\end{problem}
+
+\begin{solution}
+  2345 - $5 \cdot 7 \cdot 67$
+\end{solution}
+
+
+
+\begin{problem}{8}
+If $d|ab$, does it follow that $d|a$ or $d|b$?
+\end{problem}
+
+\begin{solution}
+  No, a counter example would be $a=6$, $b=2$, and $d=4$. $4|12$, but $4\nmid 6$ and $4\nmid 2$.
+\end{solution}
+
+
+
+\begin{problem}{10}
+Prove that $n(n+1)$ is never a square for $n>0$.
+\end{problem}
+
+\begin{proof}
+  Let $n>0$. Assume to the contrary that $k^2=n(n+1)$ for some $k$. This means that $n|k^2$ and $(n+1)|k^2$.
+
+\end{proof}
+
+
+
+
+\section{Sage Work}
+
+
+\begin{problem}{A}
+How many primes are there less than $10^6$?
+\end{problem}
+
+\begin{solution}
+  \lstinputlisting[language=Python, firstline=2, lastline =6]{Homeworkfrozen.md}
+
+  \lstinputlisting[firstline=9, lastline =9]{Homeworkfrozen.md}
+\end{solution}
+
+
+
+\begin{problem}{B}
+Find $x,y$ such that $2015x+93y=31$
+\end{problem}
+
+\begin{solution}
+  \lstinputlisting[language=Python, firstline=14, lastline =16]{Homeworkfrozen.md}
+
+  \lstinputlisting[firstline=19, lastline =19]{Homeworkfrozen.md}
+\end{solution}
+
+
+\begin{problem}{C (Extra Credit)}
+Let $r(n)$ be the number formed by repeating $n$ 1s. For example $r(5)=11111$. Find $\gcd(r(2025),r(103))$.
+
+\end{problem}
+
+\begin{solution}
+  \lstinputlisting[language=Python, firstline=24, lastline =33]{Homeworkfrozen.md}
+
+  \lstinputlisting[firstline=36, lastline =36]{Homeworkfrozen.md}
+\end{solution}
+
+
+
+\end{document}
