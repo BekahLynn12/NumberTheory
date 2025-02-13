@@ -17,6 +17,7 @@
 \newcommand{\F}{\mathbb{F}}
 \newcommand{\R}{\mathbb{R}}
 \newcommand{\C}{\mathbb{C}}
+\newcommand{\Q}{\mathbb{Q}}
 
 \definecolor{codegreen}{rgb}{0,0.6,0}
 \definecolor{codegray}{rgb}{0.5,0.5,0.5}
@@ -156,7 +157,30 @@ Find two different solutions of $299x+247y=13$.
     299x+ 247y & = 13 \\
     23x + 19y  & = 1  \\
   \end{align*}
-  Then using $y=t$ and $x=\frac{1-23t}{19}$, we can see $t=5$ would have an integer solutoins. So a solution for this would be $x=-6$ and $y=5$.
+  Then, use UA
+  \begin{align*}
+    23 & = 19(1)+ 4 \\
+    19 & = 4(4) + 3 \\
+    4  & = 3(1) + 1 \\
+    3  & = 1(3) + 0 \\
+  \end{align*}
+  Then, doing it back we get
+  \begin{align*}
+    1  & = 4 - 3(1)                   \\
+    1  & = 23-19 - (19-4(4))          \\
+    1  & = 23-19 - 19+4(23-19(1))     \\
+    1  & = 23-19 - 19 + 23(4) - 19(4) \\
+    1  & = 23(5) +19(-6)              \\
+    \intertext{Multiply by 13 and we get,}
+    13 & = 299(5) + 247(-6)           \\
+  \end{align*}
+  So an integer solution would be $x=5$ and $y=-6$.
+
+  Then, for the second solution, we could have
+  \begin{align*}
+    13 & = 299(-242) + 247(293)
+  \end{align*}
+  So a second integer solution would be $x=-242$ and $y=293$.
 \end{solution}
 
 
@@ -228,15 +252,15 @@ Prove: If $c|ab$ and $(c,a)=d$, then $c|db$.
 \end{problem}
 
 \begin{proof}
-  Let $c|ab$ and $(c,a)=d$. $c|ab$ means that $\exists n\in\N$ s.t. $cn=ab$. Then ${c,a}=d$ means that $\exists i,j\in\N$ s.t. $d(i)=c$ and $d(j)=a$ and any other divisor of $c$ and $a$ are $\leq d$.
-
-  It follows that $d|ab$. Since $c|ab$
-
-  Then assume $j\nmid c$, that would mean that
-
-
-  %c(i) = db
-
+  Since $(c,a)=d$, we know this means that $\exists x,y$ s.t. $cx + ay = d$, then
+  \begin{align*}
+    cx + ay    & = d  \\
+    bcx + aby  & = db \\
+    \intertext{Given that $c|ab$, we know that $\exists n$ s.t. $cn = ab$,}
+    bcx + cny  & = db \\
+    c(bx + ny) & = db \\
+  \end{align*}
+  This is the definition of $c|db$.
 \end{proof}
 
 
@@ -251,7 +275,27 @@ Prove: If $c|ab$ and $(c,a)=d$, then $c|db$.
 \begin{solution}
   \begin{itemize}
     \item [(a)]
+          \begin{proof}
+            Let $x^2+ax+b=0$ have an integer root. This means that $x^2+ax+b \equiv 0 \pmod{m}$ for all $m>0$. So
+            \begin{align*}
+              x^2+ax+b  & \equiv 0 & \pmod{x} \\
+              0 + 0 + b & \equiv 0 & \pmod{x} \\
+              b         & \equiv 0 & \pmod{x}
+            \end{align*}
+            This is the same as saying $x|b$.
+          \end{proof}
     \item [(b)]
+          \begin{proof}
+            Let $x^2+ax+b=0$ have a rational root $x=\sfrac{p}{q}$; where $p,q\in \N$ (assume $x$ is in lowest terms) and $q\neq 0$. Assume to the contrary that $x\notin \Z$, meaning $q\nmid p$. Then,
+            \begin{align*}
+              \frac{p^2}{q^2} + \frac{ap}{q} + b & = 0               \\
+              p^2 + apq + bq^2                   & = 0               \\
+              p^2 + apq + bq^2                   & \equiv 0 \pmod{p} \\
+              0 + 0 + bq^2                       & \equiv 0 \pmod{p} \\
+              bq^2                               & \equiv 0 \pmod{p} \\
+            \end{align*}
+            Since $q\nmid p$ it follows that $q^2\nmid p$, but the above is a way to define $q^2|p$, so this is a contradiction, meaning that $q|p$, and therefore $x\in \Z$.
+          \end{proof}
   \end{itemize}
 \end{solution}
 
@@ -266,7 +310,45 @@ Find the prime-power decompositions of 2345, 45670, and 999999999999. (Note that
 \end{problem}
 
 \begin{solution}
-  2345 - $5 \cdot 7 \cdot 67$
+  \begin{itemize}
+    \item [2345:]
+          \begin{align*}
+            2345 & \equiv 5                         & \pmod{5} \\
+            2345 & \equiv 0                         & \pmod{5} \\
+            \\
+            2345 = 5\cdot 469                                  \\
+            \\
+            469  & = 4 \cdot 100 + 6 \cdot 10 + 9   &          \\
+            469  & \equiv 4 \cdot 2 + 6 \cdot 3 + 2 & \pmod{7} \\
+            469  & \equiv 8 + 18 + 2                & \pmod{7} \\
+            469  & \equiv 1 + 4 + 2                 & \pmod{7} \\
+            469  & \equiv 0                         & \pmod{7} \\
+            2345 = 5\cdot 7 \cdot 67
+          \end{align*}
+          Since $8<\sqrt{67}<9$, we only need to look for primes up to 9, and we know 67 is not divisible by 1 to 9, so the prime power decomposition is $2345=5\cdot 7 \cdot 67$.
+    \item [45670:]
+          \begin{align*}
+            45670 & = 49000 - 3330                      \\
+                  & = (7^2 \cdot 1000) - (333 \cdot 10) \\
+                  & = 10(70^2-3 \cdot 111)              \\
+                  & = 10(70^2- 3^2 \cdot 37)            \\
+            \intertext{Since nothing can be furhter factored, we can see that that number will be prime}
+            = 10(4900- 333)                             \\
+          \end{align*}
+
+          So $45670=5\cdot2\cdot4567$.
+    \item[999999999999:]
+          \begin{align*}
+            999999999999 & = 10^12 - 1                                                              \\
+                         & = (10^6-1)(10^6+1)                                                       \\
+                         & = (10^3-1)(10^3+1)(10^6+1)                                               \\
+                         & = (999)(1001)(1000001)                                                   \\
+                         & = 3^2 \cdot 111 \cdot 1001 \cdot 101 \cdot 9901                          \\
+                         & = 3^2 \cdot (3\cdot 37) \cdot (11 \cdot 91) \cdot 101 \cdot 9901         \\
+                         & = 3^2 \cdot (3\cdot 37) \cdot (11 \cdot 7 \cdot 13) \cdot 101 \cdot 9901 \\
+          \end{align*}
+          So $999999999999 = 3^3 \cdot 7 \cdot 11\cdot 13 \cdot 37 \cdot 101 \cdot 9901$
+  \end{itemize}
 \end{solution}
 
 
@@ -286,12 +368,24 @@ Prove that $n(n+1)$ is never a square for $n>0$.
 \end{problem}
 
 \begin{proof}
-  Let $n>0$. Assume to the contrary that $k^2=n(n+1)$ for some $k$. This means that $n|k^2$ and $(n+1)|k^2$.
+  Assume to the contrary that $n(n+1)=k^2$ for some $k\in\Z$. Let the prime factorization of $k=p_1^{e_1}\cdot p_2^{e_2}\cdots p_m^{e_m}$ where $p_1<p_2<\cdots<p_m$ and $e_i>0$. We know then that $k^2 = p_1^{2e_1}\cdot p_2^{2e_2}\cdots p_m^{2e_m}$.
+  We can look at 2 cases for $n$ and $n+1$.
 
+  First, if $n$ is a square itself, then for $n(n+1)$ to be a square, $n+1$ must also be a square. But then we have $n^2<n(n+1)<(n+1)^2$, and there is no perfect square in between $n^2$ and $(n+1)^2$.
+
+  Second, if $n$ is not a square itself, then we can look at $(n,(n+1))$.
+
+  Let $(n,(n+1))=d$, this then means that $d|n$ and $d|(n+1)$, so $\exists i,j\in \Z$ s.t. $di=n$ and $dj=n+1$. Then
+  \begin{align*}
+    di     & = n      \\
+    di + 1 & = n+1    \\
+    di + 1 & = dj     \\
+    1      & = dj-di  \\
+    1      & = d(j-i) \\
+  \end{align*}
+  But this means that $d|1$, so $d=1$.
+  Since they are coprime, they have no overlapping primes in their prime decompositions, but then both $n$ and $n+1$ would have to have prime decompositions with all exponents $2e_i$, meaning that they would have to be square, so this is a contradiction.
 \end{proof}
-
-
-
 
 \section{Sage Work}
 
