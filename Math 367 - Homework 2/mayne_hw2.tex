@@ -71,7 +71,7 @@
 
 \title{Homework 1}
 \author{Rebekah Mayne\\
-  Math 370, Fall 2024}
+    Math 370, Fall 2024}
 \maketitle
 
 
@@ -82,14 +82,14 @@ Let $p$ be the least prime factor of $n$, where $n$ is composite. Prove that if 
 \end{problem}
 
 \begin{myproof}
-  Let $p$ be the least prime factor of $n$, where $n$ is composite, meaning in this case $p<n$. Let $p>n^{\sfrac{1}{3}}$. We know that $p\cdot k=n$ for some $k$, assume to the contrary that $k$ is composite, so $\exists \; m_1,m_2 \in\Z$ s.t. $m_1\cdot m_2=k$. Then, we have that $p\cdot m_1 \cdot m_2=n$. We also know that $m_1,m_2<p$ since $p$ is the least prime factor. So we have that
-  \begin{align*}
-    p\cdot m_1 \cdot m_2 & > p^3                                   \\
-    p\cdot m_1 \cdot m_2 & > p^3 > \left[n^{\sfrac{1}{3}}\right]^3 \\
-    p\cdot m_1 \cdot m_2 & > n                                     \\
-    n                    & > n                                     \\
-  \end{align*}
-  But this is an obvious contradiction, so we know that $k$ must be prime, and by our definition $k=\sfrac{n}{p}$ so we know that $\sfrac{n}{p}$ is prime.
+    Let $p$ be the least prime factor of $n$, where $n$ is composite, meaning in this case $p<n$. Let $p>n^{\sfrac{1}{3}}$. We know that $p\cdot k=n$ for some $k$, assume to the contrary that $k$ is composite, so $\exists \; m_1,m_2 \in\Z$ s.t. $m_1\cdot m_2=k$. Then, we have that $p\cdot m_1 \cdot m_2=n$. We also know that $m_1,m_2<p$ since $p$ is the least prime factor. So we have that
+    \begin{align*}
+        p\cdot m_1 \cdot m_2 & > p^3                                   \\
+        p\cdot m_1 \cdot m_2 & > p^3 > \left[n^{\sfrac{1}{3}}\right]^3 \\
+        p\cdot m_1 \cdot m_2 & > n                                     \\
+        n                    & > n                                     \\
+    \end{align*}
+    But this is an obvious contradiction, so we know that $k$ must be prime, and by our definition $k=\sfrac{n}{p}$ so we know that $\sfrac{n}{p}$ is prime.
 \end{myproof}
 
 
@@ -98,14 +98,14 @@ Prove that if $n$ is composite. then $2^n-1$ is composite.
 \end{problem}
 
 \begin{myproof}
-  Let $n$ be composite, so $\exists \; p,q$ s.t. $p\cdot q =n$ Let $m=2^p-1$, and lets look at this $\pmod{m}$,
-  \begin{align*}
-    2^p-1 \pmod{m}                   & \equiv 0 \\
-    2^p \pmod{m}                     & \equiv 1 \\
-    \left(2^{p}\right)^q \pmod{m}    & \equiv 1 \\
-    \left(2^{p}\right)^q -1 \pmod{m} & \equiv 0 \\
-  \end{align*}
-  This can be rewritten as $m| \left(2^{pq} -1\right)$, or $m| \left(2^{n} -1\right)$ which means that $2^n-1$ is composite as well.
+    Let $n$ be composite, so $\exists \; p,q$ s.t. $p\cdot q =n$ Let $m=2^p-1$, and lets look at this $\pmod{m}$,
+    \begin{align*}
+        2^p-1 \pmod{m}                   & \equiv 0 \\
+        2^p \pmod{m}                     & \equiv 1 \\
+        \left(2^{p}\right)^q \pmod{m}    & \equiv 1 \\
+        \left(2^{p}\right)^q -1 \pmod{m} & \equiv 0 \\
+    \end{align*}
+    This can be rewritten as $m| \left(2^{pq} -1\right)$, or $m| \left(2^{n} -1\right)$ which means that $2^n-1$ is composite as well.
 \end{myproof}
 
 
@@ -114,12 +114,12 @@ Is it true that if $2^n-1$ is composite, then $n$ is composite?
 \end{problem}
 
 \begin{solution}
-  Let $p$ be a divisor of $2^n-1$, this means that
-  \begin{align*}
-    2^n-1 & \equiv 0 \pmod{p} \\
-    2^n   & \equiv 1 \pmod{p} \\
-  \end{align*}
-  We can see that this means that 2 is it's own inverse in $\mod{p}$, so if $n$ was odd $2^n\equiv 2\pmod{p}$, but since $2^n\equiv 1 \pmod{p}$ we know that $n$ must be even. This means that $n$ is either composite, or $n=2$, so it is nt always true, but if $n\neq 2$ then it is.
+    Let $p$ be a divisor of $2^n-1$, this means that
+    \begin{align*}
+        2^n-1 & \equiv 0 \pmod{p} \\
+        2^n   & \equiv 1 \pmod{p} \\
+    \end{align*}
+    We can see that this means that 2 is it's own inverse in $\mod{p}$, so if $n$ was odd $2^n\equiv 2\pmod{p}$, but since $2^n\equiv 1 \pmod{p}$ we know that $n$ must be even. This means that $n$ is either composite, or $n=2$, so it is nt always true, but if $n\neq 2$ then it is.
 \end{solution}
 
 \bline
@@ -130,31 +130,31 @@ Find the smallest positive integer $n$ such that $15120 n$ is a perfect square. 
 \end{problem}
 
 \begin{solution}
-  First we want to find the PPF of $15120$, we can find that as follows,
-  \[
-    \begin{matrix}
-      15120   &                                           &          \\
-              & 15120                      \equiv 0       & \pmod{5} \\
-      \\
-      15120 = & \multicolumn{2}{l}{5 \cdot 3024}                     \\
-      \\
-              & 3024                             \equiv 0 & \pmod{4} \\
-      \\
-      15120 = & 5 \cdot 2^2 \cdot 756                     &          \\
-      \\
-              & 756                             \equiv 0  & \pmod{4} \\
-      \\
+    First we want to find the PPF of $15120$, we can find that as follows,
+    \[
+        \begin{matrix}
+            15120   &                                           &          \\
+                    & 15120                      \equiv 0       & \pmod{5} \\
+            \\
+            15120 = & \multicolumn{2}{l}{5 \cdot 3024}                     \\
+            \\
+                    & 3024                             \equiv 0 & \pmod{4} \\
+            \\
+            15120 = & 5 \cdot 2^2 \cdot 756                     &          \\
+            \\
+                    & 756                             \equiv 0  & \pmod{4} \\
+            \\
 
-      15120 = & 5 \cdot 2^4 \cdot 189                                \\
-      \\
-              & 189                             \equiv 0  & \pmod{9} \\
-      \\
-      15120 = & 5 \cdot 2^4 \cdot 3^2 \cdot 21                       \\
-    \end{matrix}
-  \]
-  So the PPF is $2^4 \cdot 3^3 \cdot 5\cdot 7$, the smallest $n$ that would make $2^4 \cdot 3^3 \cdot 5\cdot 7\cdot n$ a perfect square would be $n=3\cdot 5 \cdot 7$ or $n=105$.
+            15120 = & 5 \cdot 2^4 \cdot 189                                \\
+            \\
+                    & 189                             \equiv 0  & \pmod{9} \\
+            \\
+            15120 = & 5 \cdot 2^4 \cdot 3^2 \cdot 21                       \\
+        \end{matrix}
+    \]
+    So the PPF is $2^4 \cdot 3^3 \cdot 5\cdot 7$, the smallest $n$ that would make $2^4 \cdot 3^3 \cdot 5\cdot 7\cdot n$ a perfect square would be $n=3\cdot 5 \cdot 7$ or $n=105$.
 
-  This would make $15120n = 1589600$, which is $1260^2$.
+    This would make $15120n = 1589600$, which is $1260^2$.
 \end{solution}
 
 
@@ -166,27 +166,27 @@ Find all the solutions in positive integers of $2x+y=2$, $3x-4y=0$, and $7x+15y=
 \end{problem}
 
 \begin{solution}
-  \begin{itemize}
-    \item [(a)] $2x+y=2$ \\
-          One solution we can see by inspection is $x=2$ and $y=-2$. Then, all solutions will be
-          \begin{align*}
-            x = 2 + \frac{1}{(1,2)}t & ~ & y = -2 + \frac{2}{(1,2)}t \\
-            x = 2 + t                & ~ & y = -2+ 2t                \\
-          \end{align*}
-    \item [(b)] $3x-4y=0$ \\
-          One solution we can see by inspection is $x=4$ and $y=-3$. Then, all solutions will be
-          \begin{align*}
-            x = 4 + \frac{4}{(3,4)}t & ~ & y = -3 + \frac{3}{(3,4)}t \\
-            x = 4 + 4t               & ~ & y = -3 + 3t               \\
-          \end{align*}
-    \item [(c)] $7x+15y=51$ \\
-          One solution we can see by inspection of $7x+15y=1$ would be $x=2$ and $y=-1$, so one solution to $7x+15y=51$ would be $x=102$ and $y=-51$. Then, all solutions will be
-          \begin{align*}
-            x = 102 + \frac{15}{(7,15)}t & ~ & y = -51 + \frac{7}{(7,15)}t \\
-            x = 102 + 15t                & ~ & y = -51 + 7t                \\
-          \end{align*}
+    \begin{itemize}
+        \item [(a)] $2x+y=2$ \\
+              One solution we can see by inspection is $x=2$ and $y=-2$. Then, all solutions will be
+              \begin{align*}
+                  x = 2 + \frac{1}{(1,2)}t & ~ & y = -2 + \frac{2}{(1,2)}t \\
+                  x = 2 + t                & ~ & y = -2+ 2t                \\
+              \end{align*}
+        \item [(b)] $3x-4y=0$ \\
+              One solution we can see by inspection is $x=4$ and $y=-3$. Then, all solutions will be
+              \begin{align*}
+                  x = 4 + \frac{4}{(3,4)}t & ~ & y = -3 + \frac{3}{(3,4)}t \\
+                  x = 4 + 4t               & ~ & y = -3 + 3t               \\
+              \end{align*}
+        \item [(c)] $7x+15y=51$ \\
+              One solution we can see by inspection of $7x+15y=1$ would be $x=2$ and $y=-1$, so one solution to $7x+15y=51$ would be $x=102$ and $y=-51$. Then, all solutions will be
+              \begin{align*}
+                  x = 102 + \frac{15}{(7,15)}t & ~ & y = -51 + \frac{7}{(7,15)}t \\
+                  x = 102 + 15t                & ~ & y = -51 + 7t                \\
+              \end{align*}
 
-  \end{itemize}
+    \end{itemize}
 \end{solution}
 
 
@@ -198,27 +198,27 @@ Find the least residue of $1789 \pmod{4},\pmod{10},\text{and} \pmod{101}$.
 \end{problem}
 
 \begin{solution}
-  \begin{itemize}
-    \item $1789 \pmod{4}$
-          \begin{align*}
-            1789 & = 1600 + 189                     \\
-            1789 & \equiv 0 + 160 + 29   & \pmod{4} \\
-            1789 & \equiv 0 + 0 + 28 + 1 & \pmod{4} \\
-            1789 & \equiv  1             & \pmod{4} \\
-          \end{align*}
-    \item $1789 \pmod{10}$
-          \begin{align*}
-            1789 & = 1700 + 89                   \\
-            1789 & \equiv 0 + 80 + 9 & \pmod{10} \\
-            1789 & \equiv  9         & \pmod{10} \\
-          \end{align*}
-    \item $1789 \pmod{101}$
-          \begin{align*}
-            1789 & = 1717 + 72                \\
-            1789 & \equiv 0 + 72 & \pmod{101} \\
-            1789 & \equiv 72     & \pmod{101} \\
-          \end{align*}
-  \end{itemize}
+    \begin{itemize}
+        \item $1789 \pmod{4}$
+              \begin{align*}
+                  1789 & = 1600 + 189                     \\
+                  1789 & \equiv 0 + 160 + 29   & \pmod{4} \\
+                  1789 & \equiv 0 + 0 + 28 + 1 & \pmod{4} \\
+                  1789 & \equiv  1             & \pmod{4} \\
+              \end{align*}
+        \item $1789 \pmod{10}$
+              \begin{align*}
+                  1789 & = 1700 + 89                   \\
+                  1789 & \equiv 0 + 80 + 9 & \pmod{10} \\
+                  1789 & \equiv  9         & \pmod{10} \\
+              \end{align*}
+        \item $1789 \pmod{101}$
+              \begin{align*}
+                  1789 & = 1717 + 72                \\
+                  1789 & \equiv 0 + 72 & \pmod{101} \\
+                  1789 & \equiv 72     & \pmod{101} \\
+              \end{align*}
+    \end{itemize}
 \end{solution}
 
 
@@ -228,7 +228,7 @@ Find all $m$ such that $1848 \equiv 1914 \pmod{m}.$
 \end{problem}
 
 \begin{solution}
-  $1848 \equiv 1914 \pmod{m}$ iff $1914=1848 + km$ for some $k\in\Z$. This means that we need $66=km$. The PPD of 66 is $11\cdot 3 \cdot 2$, so $m$ can be in $\{2,3,6,11,22,33,66\}$.
+    $1848 \equiv 1914 \pmod{m}$ iff $1914=1848 + km$ for some $k\in\Z$. This means that we need $66=km$. The PPD of 66 is $11\cdot 3 \cdot 2$, so $m$ can be in $\{2,3,6,11,22,33,66\}$.
 \end{solution}
 
 
@@ -237,7 +237,7 @@ Show that every prime (except 2) is congruent to 1 or 3$\pmod{4}$.
 \end{problem}
 
 \begin{myproof}
-  Let $p$ be any prime (other than 2). By definition we know that $2 \ndiv p$. We also can see that for $a\equiv 2\pmod{4}$ or $a\equiv 0\pmod{4}$ that either $a=2 +4k$ or $a=4k$ for some $k$. No matter what $k$ we choose, $2|4k$, so $2|a$ must also be true. Therefore we know that $p\neq a$, so $p$ must be congruent to either 1 or 3$\pmod{4}$.
+    Let $p$ be any prime (other than 2). By definition we know that $2 \ndiv p$. We also can see that for $a\equiv 2\pmod{4}$ or $a\equiv 0\pmod{4}$ that either $a=2 +4k$ or $a=4k$ for some $k$. No matter what $k$ we choose, $2|4k$, so $2|a$ must also be true. Therefore we know that $p\neq a$, so $p$ must be congruent to either 1 or 3$\pmod{4}$.
 \end{myproof}
 
 
@@ -246,8 +246,8 @@ Show that every prime (except 2 or 3) is congruent to 1 or 5$\pmod{6}$.
 \end{problem}
 
 \begin{myproof}
-  Let $p$ be any prime (other than 2 or 3). By definition $2\ndiv a$ and $3\ndiv a$. For $a$ to be congruent to 2, 3, 4, or 0, then one of the following must be true: $a=6k$, $a=2 +6k$, $a=3 +6k$, or $a=4 +6k$.
-  Then we can see that either $2|a$ ($a=6k$, $a=2+6k$, or $a=4+6k$), or $3|a$ ($a=6k$ or $a=3+6k$). Therefore $a\neq p$. So $p$ must be congruent to 1 or 5$\pmod{6}$.
+    Let $p$ be any prime (other than 2 or 3). By definition $2\ndiv a$ and $3\ndiv a$. For $a$ to be congruent to 2, 3, 4, or 0, then one of the following must be true: $a=6k$, $a=2 +6k$, $a=3 +6k$, or $a=4 +6k$.
+    Then we can see that either $2|a$ ($a=6k$, $a=2+6k$, or $a=4+6k$), or $3|a$ ($a=6k$ or $a=3+6k$). Therefore $a\neq p$. So $p$ must be congruent to 1 or 5$\pmod{6}$.
 \end{myproof}
 
 
@@ -257,7 +257,7 @@ What can primes (except 2,3, or 5) be congruent to$\pmod{30}$?
 \end{problem}
 
 \begin{solution}
-  Let $p$ be any prime (other than 2,3, or 5). Then, $p$ must be congruent to $a$ where $a\neq k$ for $k\bot 30$. So $p$ must be congruent to something in the set $\{1, 7, 11, 13, 17, 19, 23, 29\}$.
+    Let $p$ be any prime (other than 2,3, or 5). Then, $p$ must be congruent to $a$ where $a\neq k$ for $k\bot 30$. So $p$ must be congruent to something in the set $\{1, 7, 11, 13, 17, 19, 23, 29\}$.
 \end{solution}
 
 
@@ -266,13 +266,13 @@ In the multiplication $31415\cdot92653=2910\underline{\phantom{3}}93995$, one di
 \end{problem}
 
 \begin{solution}
-  We can see that $11|92653$ by the 11 division prop, because $9-2+6-5+3=11$. This means that we know that our answer must also be divisible by 11.
-  Subbing in $x$ for our missing digit we can get that
-  \[
-    2+9-1+0-x+9-3+9-9+5 = 21-x
-  \]
-  For $21-x\equiv 0 \pmod{11}$ and $0\leq x\leq 9$, we see that $x=9$.
-  So our mising digit is 9.
+    We can see that $11|92653$ by the 11 division prop, because $9-2+6-5+3=11$. This means that we know that our answer must also be divisible by 11.
+    Subbing in $x$ for our missing digit we can get that
+    \[
+        2+9-1+0-x+9-3+9-9+5 = 21-x
+    \]
+    For $21-x\equiv 0 \pmod{11}$ and $0\leq x\leq 9$, we see that $x=9$.
+    So our missing digit is 9.
 \end{solution}
 
 
@@ -281,14 +281,14 @@ Show that the difference of two consecutive cubes is never divisible by 3.
 \end{problem}
 
 \begin{myproof}
-  Let $x=a^3$ and $y=(a+1)^3$. Then
-  \begin{align*}
-    y - x & = (a+1)^3 - a^3           \\
-          & = a^3 - 3a^2 + 3a -1 -a^3 \\
-          & = - 3a^2 + 3a -1          \\
-          & \equiv - 1 \pmod{3}       \\
-  \end{align*}
-  This means that the difference two consecutive cubes will always be equivalent to -1 mod 3.
+    Let $x=a^3$ and $y=(a+1)^3$. Then
+    \begin{align*}
+        y - x & = (a+1)^3 - a^3           \\
+              & = a^3 - 3a^2 + 3a -1 -a^3 \\
+              & = - 3a^2 + 3a -1          \\
+              & \equiv - 1 \pmod{3}       \\
+    \end{align*}
+    This means that the difference two consecutive cubes will always be equivalent to -1 mod 3.
 \end{myproof}
 
 
@@ -297,32 +297,32 @@ Show that the difference of two consecutive cubes is never divisible by 5.
 \end{problem}
 
 \begin{myproof}
-  Let $x=a^3$ and $y=(a+1)^3$. Then
-  \begin{align*}
-    y - x & = (a+1)^3 - a^3                \\
-          & = a^3 - 3a^2 + 3a -1 -a^3      \\
-          & = - 3a^2 + 3a -1               \\
-          & \equiv - 3a^2 + 3a -1 \pmod{5} \\
-  \end{align*}
-  Assume to the contrary that it is divisible by 5, then
-  \begin{align*}
-    -3a^2 + 3a -1 & \equiv 0   \pmod{5} \\
-    -3a^2 + 3a    & \equiv 1   \pmod{5} \\
-    -3(a^2 -a)    & \equiv 1   \pmod{5} \\
-    2(a^2 -a)     & \equiv 1   \pmod{5} \\
-  \end{align*}
-  Then we can make the chart:
+    Let $x=a^3$ and $y=(a+1)^3$. Then
+    \begin{align*}
+        y - x & = (a+1)^3 - a^3                \\
+              & = a^3 - 3a^2 + 3a -1 -a^3      \\
+              & = - 3a^2 + 3a -1               \\
+              & \equiv - 3a^2 + 3a -1 \pmod{5} \\
+    \end{align*}
+    Assume to the contrary that it is divisible by 5, then
+    \begin{align*}
+        -3a^2 + 3a -1 & \equiv 0   \pmod{5} \\
+        -3a^2 + 3a    & \equiv 1   \pmod{5} \\
+        -3(a^2 -a)    & \equiv 1   \pmod{5} \\
+        2(a^2 -a)     & \equiv 1   \pmod{5} \\
+    \end{align*}
+    Then we can make the chart:
 
-  \setlength{\tabcolsep}{3pt}
-  \begin{center}
-    \begin{tabular}{r||c|c|c|c|c}
-      $a     \pmod{5}$    & $0\pmod{5}$ & $1\pmod{5}$ & $2\pmod{5}$ & $3\pmod{5}$  & $4\pmod{5}$    \\
-      $a^2  \pmod{5}$     & 0           & 1           & 4           & $9 \equiv 4$ & $16 \equiv 1 $ \\
-      $a^2-a \pmod{5}$    & 0           & 0           & 2           & 1            & $-3 \equiv 2 $ \\
-      $2(a^2-a) \pmod{5}$ & 0           & 0           & 4           & 2            & 4              \\
-    \end{tabular}
-  \end{center}
-  We can see that none of these are able to be congruent to 1, so we can see that this is a contradiction so the difference of two consecutive cubes is never divisible by 5.
+    \setlength{\tabcolsep}{3pt}
+    \begin{center}
+        \begin{tabular}{r||c|c|c|c|c}
+            $a     \pmod{5}$    & $0\pmod{5}$ & $1\pmod{5}$ & $2\pmod{5}$ & $3\pmod{5}$  & $4\pmod{5}$    \\
+            $a^2  \pmod{5}$     & 0           & 1           & 4           & $9 \equiv 4$ & $16 \equiv 1 $ \\
+            $a^2-a \pmod{5}$    & 0           & 0           & 2           & 1            & $-3 \equiv 2 $ \\
+            $2(a^2-a) \pmod{5}$ & 0           & 0           & 4           & 2            & 4              \\
+        \end{tabular}
+    \end{center}
+    We can see that none of these are able to be congruent to 1, so we can see that this is a contradiction so the difference of two consecutive cubes is never divisible by 5.
 
 \end{myproof}
 
@@ -332,18 +332,18 @@ Show that if $n\equiv 4\pmod{9}$, then $n$ cannot be written as the sum of three
 \end{problem}
 
 \begin{solution}
-  We can make the chart:
+    We can make the chart:
 
-  \setlength{\tabcolsep}{3pt}
-  \begin{center}
-    \begin{tabular}{r||c|c|c|c|c|c|c|c|c}
-      $r    \pmod{9}$    & 0 & 1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 \\
-      $r^2     \pmod{9}$ & 0 & 1 & 4 & 0 & 7 & 7 & 0 & 4 & 1 \\
-      $r^3     \pmod{9}$ & 0 & 1 & 8 & 0 & 1 & 8 & 0 & 1 & 8 \\
-    \end{tabular}
-  \end{center}
+    \setlength{\tabcolsep}{3pt}
+    \begin{center}
+        \begin{tabular}{r||c|c|c|c|c|c|c|c|c}
+            $r    \pmod{9}$    & 0 & 1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 \\
+            $r^2     \pmod{9}$ & 0 & 1 & 4 & 0 & 7 & 7 & 0 & 4 & 1 \\
+            $r^3     \pmod{9}$ & 0 & 1 & 8 & 0 & 1 & 8 & 0 & 1 & 8 \\
+        \end{tabular}
+    \end{center}
 
-  We can see that cubes can only be congruent to 0, 1 or 8 in mod 9. So the only sums that three cubes can get to are 0, 1, 2, 3, 8, $9\equiv 0$, $10\equiv 1$, $16\equiv 5$, $17 \equiv 6$, or $24 \equiv 6$. So there is no way for the sum of three cubes to be congruent to 4 mod 9.
+    We can see that cubes can only be congruent to 0, 1 or 8 in mod 9. So the only sums that three cubes can get to are 0, 1, 2, 3, 8, $9\equiv 0$, $10\equiv 1$, $16\equiv 5$, $17 \equiv 6$, or $24 \equiv 6$. So there is no way for the sum of three cubes to be congruent to 4 mod 9.
 \end{solution}
 
 \bline
@@ -352,109 +352,109 @@ Show that if $n\equiv 4\pmod{9}$, then $n$ cannot be written as the sum of three
 \begin{problem}{1}
 Solve each of the following:
 \begin{itemize}
-  \item [(a)] $2x\equiv 1 \pmod{17}$
-  \item [(b)] $3x\equiv 1 \pmod{17}$
-  \item [(c)] $3x\equiv 6 \pmod{18}$
-  \item [(d)] $40x\equiv 777 \pmod{1777}$
+    \item [(a)] $2x\equiv 1 \pmod{17}$
+    \item [(b)] $3x\equiv 1 \pmod{17}$
+    \item [(c)] $3x\equiv 6 \pmod{18}$
+    \item [(d)] $40x\equiv 777 \pmod{1777}$
 \end{itemize}
 
 \end{problem}
 
 \begin{solution}
-  \begin{itemize}
-    \item [(a)] $(2,17)=1$, so there is only 1 solution and it is $x\equiv9\pmod{17}$.
-    \item [(b)] Since $(3,17)=1$, there is only 1 solution and it is $x\equiv6\pmod{17}$.
-    \item [(c)] Since $(3,18)=3$, and $3|6$, we can rewrite it as $x\equiv 2 \pmod{6}$. Then, there are 3 solutions, and they are $x\equiv 2, 8, 14 \pmod{18}$.
-    \item [(d)] $(40,1777)=1$, so there is only 1 solution, and we can use EA to solve as follows,
-          \begin{align*}
-            1777 & = 40(44)+17 \\
-            40   & = 17(2) + 6 \\
-            17   & = 6(2) + 5  \\
-            6    & = 5(1) + 1  \\
-            5    & = 1(5)+0    \\
-          \end{align*}
-          Then using back substitution,
-          \begin{align*}
-            1   & = 6 - 5                      \\
-                & = 6 - 17+6(2)                \\
-                & = 17(-1) + 6(3)              \\
-                & = 17(-1) + 3(40-17(2))       \\
-                & = 17(-1) + 40(3) + 17(-6)    \\
-                & = 17(-7) + 40(3)             \\
-                & = (-7)(1777-40(44)) + 40(3)  \\
-                & = 1777(-7) + 40(308) + 40(3) \\
-            1   & = 1777(-7) + 40(311)         \\
-            777 & = 1777(-5439) +40(241647)    \\
-            777 & = 40(241647) \pmod{1777}     \\
-            777 & = 40(1752) \pmod{1777}       \\
-          \end{align*}
-          So we can see that $x\equiv 1752\pmod{1777}$
-  \end{itemize}
+    \begin{itemize}
+        \item [(a)] $(2,17)=1$, so there is only 1 solution and it is $x\equiv9\pmod{17}$.
+        \item [(b)] Since $(3,17)=1$, there is only 1 solution and it is $x\equiv6\pmod{17}$.
+        \item [(c)] Since $(3,18)=3$, and $3|6$, we can rewrite it as $x\equiv 2 \pmod{6}$. Then, there are 3 solutions, and they are $x\equiv 2, 8, 14 \pmod{18}$.
+        \item [(d)] $(40,1777)=1$, so there is only 1 solution, and we can use EA to solve as follows,
+              \begin{align*}
+                  1777 & = 40(44)+17 \\
+                  40   & = 17(2) + 6 \\
+                  17   & = 6(2) + 5  \\
+                  6    & = 5(1) + 1  \\
+                  5    & = 1(5)+0    \\
+              \end{align*}
+              Then using back substitution,
+              \begin{align*}
+                  1   & = 6 - 5                      \\
+                      & = 6 - 17+6(2)                \\
+                      & = 17(-1) + 6(3)              \\
+                      & = 17(-1) + 3(40-17(2))       \\
+                      & = 17(-1) + 40(3) + 17(-6)    \\
+                      & = 17(-7) + 40(3)             \\
+                      & = (-7)(1777-40(44)) + 40(3)  \\
+                      & = 1777(-7) + 40(308) + 40(3) \\
+                  1   & = 1777(-7) + 40(311)         \\
+                  777 & = 1777(-5439) +40(241647)    \\
+                  777 & = 40(241647) \pmod{1777}     \\
+                  777 & = 40(1752) \pmod{1777}       \\
+              \end{align*}
+              So we can see that $x\equiv 1752\pmod{1777}$
+    \end{itemize}
 \end{solution}
 
 
 \begin{problem}{3}
 Solve the systems
 \begin{itemize}
-  \item [(a)] $x\equiv 1 \pmod{2},\; x\equiv 1 \pmod{3}$.
-  \item [(b)] $x\equiv 3 \pmod{5}, \; x\equiv 5\pmod{7}, \; x \equiv 7 \pmod{11}$.
-  \item [(c)] $2x\equiv 1 \pmod{5}, \; 3x\equiv 2 \pmod{7}, \; 4x\equiv 3 \pmod{11}$.
+    \item [(a)] $x\equiv 1 \pmod{2},\; x\equiv 1 \pmod{3}$.
+    \item [(b)] $x\equiv 3 \pmod{5}, \; x\equiv 5\pmod{7}, \; x \equiv 7 \pmod{11}$.
+    \item [(c)] $2x\equiv 1 \pmod{5}, \; 3x\equiv 2 \pmod{7}, \; 4x\equiv 3 \pmod{11}$.
 \end{itemize}
 \end{problem}
 
 \begin{solution}
-  \begin{itemize}
-    \item [(a)] Let $k_1, k_2\in \Z$. Then we can do the following,
-          \[
-            \begin{matrix*}[l]
-              x \equiv 1 \pmod{2}        & \rightarrow & x= 2k_1 + 1      \\
-              2k_1 + 1 \equiv 1 \pmod{3} & \leftarrow  &                  \\
-              2k_1 \equiv 0 \pmod{3}     &                                \\
-              k_1 \equiv 0 \pmod{3}      & \rightarrow & k_1 = 3k_2       \\
-              &             & x= 2(3(k_2)) + 1 \\
-              &             & x= 6k_2 + 1      \\
-              x \equiv 1 \pmod{6}        & \leftarrow  &                  \\
-            \end{matrix*}
-          \]
-    \item [(b)] Let $k_1, k_2, k_3 \in \Z$. Then we can do the following,
-          \[
-            \begin{matrix*}[l]
-              x \equiv 3 \pmod{5}           & \rightarrow & x= 5k_1 + 3           \\
-              5k_1 + 3 \equiv 5 \pmod{7}    & \leftarrow  &                       \\
-              5k_1 \equiv 2 \pmod{7}        &             &                       \\
-              k_1 \equiv 6 \pmod{7}         & \rightarrow & k_1= 7k_2 + 6         \\
-              &             & x= 5(7k_2 + 3) + 6    \\
-              &             & x= 35k_2 + 15 + 6     \\
-              &             & x= 35k_2 + 21         \\
-              35k_2 + 21 \equiv 7 \pmod{11} & \leftarrow  &                       \\
-              2k_2 - 1 \equiv 7 \pmod{11}   &             &                       \\
-              2k_2 \equiv 8 \pmod{11}       &             &                       \\
-              k_2 \equiv 4 \pmod{11}        & \rightarrow & k_2 = 11k_3 + 4       \\
-              &             & x= 35(11k_3 + 4) + 21 \\
-              &             & x= 385k_3 + 140 + 21  \\
-              &             & x= 385k_3 + 161       \\
-              x \equiv 161 \pmod{385}       & \leftarrow  &
-            \end{matrix*}[l]
-          \]
-    \item [(c)] [(b)] Let $k_1, k_2, k_3 \in \Z$. Then we can do the following,
-          \[
-            \begin{matrix*}[l]
-              2x \equiv 1 \pmod{5}          &             &                 \\
-              x \equiv 3 \pmod{5}           & \rightarrow & x= 5k_1 + 3     \\
-              3(5k_1 + 3) \equiv 2 \pmod{7} & \leftarrow  &                 \\
-              15k_1 + 9 \equiv 2 \pmod{7}   &             &                 \\
-              k_1 \equiv 0 \pmod{7}         & \rightarrow & k_1 = 7k_2      \\
-              &             & x= 5(7k_2) +3   \\
-              &             & x= 35k_2 + 3    \\
-              4(35k_2+3) \equiv 3 \pmod{11} & \leftarrow  &                 \\
-              k_2 + 1 \equiv 3 \pmod{11}    &             &                 \\
-              k_2 \equiv 2 \pmod{11}        & \rightarrow & k_2 = 11k_3 + 2 \\
-              &             & x= 35(11k_3+2)  \\
-              &             & x= 385k_3 + 70  \\
-              x\equiv 70 \pmod{385}         & \leftarrow  &                 \\
-            \end{matrix*}
-          \]
-  \end{itemize}
+    \begin{itemize}
+        \item [(a)] Let $k_1, k_2\in \Z$. Then we can do the following,
+              \[
+                  \begin{matrix*}[l]
+                      x \equiv 1 \pmod{2}        & \rightarrow & x= 2k_1 + 1      \\
+                      2k_1 + 1 \equiv 1 \pmod{3} & \leftarrow  &                  \\
+                      2k_1 \equiv 0 \pmod{3}     &                                \\
+                      k_1 \equiv 0 \pmod{3}      & \rightarrow & k_1 = 3k_2       \\
+                      &             & x= 2(3(k_2)) + 1 \\
+                      &             & x= 6k_2 + 1      \\
+                      x \equiv 1 \pmod{6}        & \leftarrow  &                  \\
+                  \end{matrix*}
+              \]
+        \item [(b)] Let $k_1, k_2, k_3 \in \Z$. Then we can do the following,
+              \[
+                  \begin{matrix*}[l]
+                      x \equiv 3 \pmod{5}           & \rightarrow & x= 5k_1 + 3           \\
+                      5k_1 + 3 \equiv 5 \pmod{7}    & \leftarrow  &                       \\
+                      5k_1 \equiv 2 \pmod{7}        &             &                       \\
+                      k_1 \equiv 6 \pmod{7}         & \rightarrow & k_1= 7k_2 + 6         \\
+                      &             & x= 5(7k_2 + 3) + 6    \\
+                      &             & x= 35k_2 + 15 + 6     \\
+                      &             & x= 35k_2 + 21         \\
+                      35k_2 + 21 \equiv 7 \pmod{11} & \leftarrow  &                       \\
+                      2k_2 - 1 \equiv 7 \pmod{11}   &             &                       \\
+                      2k_2 \equiv 8 \pmod{11}       &             &                       \\
+                      k_2 \equiv 4 \pmod{11}        & \rightarrow & k_2 = 11k_3 + 4       \\
+                      &             & x= 35(11k_3 + 4) + 21 \\
+                      &             & x= 385k_3 + 140 + 21  \\
+                      &             & x= 385k_3 + 161       \\
+                      x \equiv 161 \pmod{385}       & \leftarrow  &
+                  \end{matrix*}
+              \]
+        \item [(c)] [(b)] Let $k_1, k_2, k_3 \in \Z$. Then we can do the following,
+              \[
+                  \begin{matrix*}[l]
+                      2x \equiv 1 \pmod{5}          &             &                 \\
+                      x \equiv 3 \pmod{5}           & \rightarrow & x= 5k_1 + 3     \\
+                      3(5k_1 + 3) \equiv 2 \pmod{7} & \leftarrow  &                 \\
+                      15k_1 + 9 \equiv 2 \pmod{7}   &             &                 \\
+                      k_1 \equiv 0 \pmod{7}         & \rightarrow & k_1 = 7k_2      \\
+                      &             & x= 5(7k_2) +3   \\
+                      &             & x= 35k_2 + 3    \\
+                      4(35k_2+3) \equiv 3 \pmod{11} & \leftarrow  &                 \\
+                      k_2 + 1 \equiv 3 \pmod{11}    &             &                 \\
+                      k_2 \equiv 2 \pmod{11}        & \rightarrow & k_2 = 11k_3 + 2 \\
+                      &             & x= 35(11k_3+2)  \\
+                      &             & x= 385k_3 + 70  \\
+                      x\equiv 70 \pmod{385}         & \leftarrow  &                 \\
+                  \end{matrix*}
+              \]
+    \end{itemize}
 \end{solution}
 
 
@@ -463,7 +463,7 @@ What possibilities are there for number of solutions of a linear congruence (mod
 \end{problem}
 
 \begin{solution}
-  The possibilities are any possibilities of $(a,20)$, which can be anything in the set $\{0,1,2,4,5,10,20\}$
+    The possibilities are any possibilities of $(a,20)$, which can be anything in the set $\{0,1,2,4,5,10,20\}$
 \end{solution}
 
 
@@ -472,32 +472,32 @@ Construct linear congruences modulo 20 with no solutions, just one solution, and
 \end{problem}
 
 \begin{solution}
-  \[
-    \begin{matrix*}[l]
-      \text{\textbf{No Solutions:}} &                  \\
-      & ax \equiv b \pmod{20} &\text{ where } (a,m)\ndiv b \\
-      \text{\textbf{\phantom{No Solutii}Ex:}} &                  \\
-      & 5x \equiv 7 \pmod{20} \\
-      \text{\textbf{  1 Solutions:}} &                  \\
-      & ax \equiv b \pmod{20} &\text{ where } (a,m)=1 \\
-      \text{\textbf{\phantom{  1 Solutii}Ex:}} &                  \\
-      & 7x \equiv 13 \pmod{20} \rightarrow & x\equiv 19 \pmod{20} \\
-      \text{\textbf{  k Solutions:}} &                  \\
-      & ax \equiv b \pmod{20} &\text{ where } (a,m)=k \text{ and } k|b \\
-      \text{\textbf{\phantom{  k Sii}Ex (2):}} &                  \\
-      & 6x \equiv 14 \pmod{20} \rightarrow & x\equiv 9, 19 \pmod{20} \\
-      \text{\textbf{\phantom{  k Sii}Ex (4):}} &                  \\
-      & 8x \equiv 16 \pmod{20} \rightarrow&  x\equiv 2, 6, 10, 16 \pmod{20} \\
-      \text{\textbf{\phantom{  k Sii}Ex (5):}} &                  \\
-      & 15x \equiv 5 \pmod{20} \rightarrow & x\equiv 3, 7, 11, 15, 19 \pmod{20} \\
-      \text{\textbf{\phantom{  k S}Ex (10):}} &                  \\
-      & 10x \equiv 10 \pmod{20} \rightarrow & x\equiv 1, 3, 5, 7,9,11,13,15,17,19\pmod{20} \\
-      \text{\textbf{\phantom{  k S}Ex (20):}} &                  \\
-      & 20x \equiv 20 \pmod{20} \rightarrow & x\equiv 0,1,2,3,4,5,6,7,8,9,10,11\\
-      && \phantom{x\equiv' } 12,13,14,15,16,17,18,19 \pmod{20} \\
+    \[
+        \begin{matrix*}[l]
+            \text{\textbf{No Solutions:}} &                  \\
+            & ax \equiv b \pmod{20} &\text{ where } (a,m)\ndiv b \\
+            \text{\textbf{\phantom{No Solutii}Ex:}} &                  \\
+            & 5x \equiv 7 \pmod{20} \\
+            \text{\textbf{  1 Solutions:}} &                  \\
+            & ax \equiv b \pmod{20} &\text{ where } (a,m)=1 \\
+            \text{\textbf{\phantom{  1 Solutii}Ex:}} &                  \\
+            & 7x \equiv 13 \pmod{20} \rightarrow & x\equiv 19 \pmod{20} \\
+            \text{\textbf{  k Solutions:}} &                  \\
+            & ax \equiv b \pmod{20} &\text{ where } (a,m)=k \text{ and } k|b \\
+            \text{\textbf{\phantom{  k Sii}Ex (2):}} &                  \\
+            & 6x \equiv 14 \pmod{20} \rightarrow & x\equiv 9, 19 \pmod{20} \\
+            \text{\textbf{\phantom{  k Sii}Ex (4):}} &                  \\
+            & 8x \equiv 16 \pmod{20} \rightarrow&  x\equiv 2, 6, 10, 16 \pmod{20} \\
+            \text{\textbf{\phantom{  k Sii}Ex (5):}} &                  \\
+            & 15x \equiv 5 \pmod{20} \rightarrow & x\equiv 3, 7, 11, 15, 19 \pmod{20} \\
+            \text{\textbf{\phantom{  k S}Ex (10):}} &                  \\
+            & 10x \equiv 10 \pmod{20} \rightarrow & x\equiv 1, 3, 5, 7,9,11,13,15,17,19\pmod{20} \\
+            \text{\textbf{\phantom{  k S}Ex (20):}} &                  \\
+            & 20x \equiv 20 \pmod{20} \rightarrow & x\equiv 0,1,2,3,4,5,6,7,8,9,10,11\\
+            && \phantom{x\equiv' } 12,13,14,15,16,17,18,19 \pmod{20} \\
 
-    \end{matrix*}
-  \]
+        \end{matrix*}
+    \]
 \end{solution}
 
 
@@ -507,35 +507,35 @@ Construct linear congruences modulo 20 with no solutions, just one solution, and
 \begin{problem}{}
 Let $f(x) = x^2+x+41$.
 \begin{itemize}
-  \item [(a)] Have Sage compute $f(n)$ for $n=1,2,\cdots, 10$ and make a conjecture about the possible values of $f(n)$ when $n$ is any positive integer
-  \item [(b)] Prove or disprove your conjecture from part (a).
-  \item [(c)] \textbf{Extra Credit:} Prove that for any polynomial of the form $f(x)=ax^2+bx+c$ with $a,b,c\in\Z$ and $a\neq 0$, $f(n)$ will be \textit{composite} for infinitely many positive integers $n$.
-  \item [(d)] \textbf{Extra Credit:} Prove that you can find a non-constant quadratic polynomial $f(x)$ such that $f(n)$ is prime for infinitely many values of $n$. (\textbf{Hint:} Do the rest of your homework first)
+    \item [(a)] Have Sage compute $f(n)$ for $n=1,2,\cdots, 10$ and make a conjecture about the possible values of $f(n)$ when $n$ is any positive integer
+    \item [(b)] Prove or disprove your conjecture from part (a).
+    \item [(c)] \textbf{Extra Credit:} Prove that for any polynomial of the form $f(x)=ax^2+bx+c$ with $a,b,c\in\Z$ and $a\neq 0$, $f(n)$ will be \textit{composite} for infinitely many positive integers $n$.
+    \item [(d)] \textbf{Extra Credit:} Prove that you can find a non-constant quadratic polynomial $f(x)$ such that $f(n)$ is prime for infinitely many values of $n$. (\textbf{Hint:} Do the rest of your homework first)
 \end{itemize}
 \end{problem}
 
 \begin{solution}
-  \begin{itemize}
-    \item [(a)]
-          \lstinputlisting[language=Python, firstline=2, lastline =26]{Homework2frozen.md}
+    \begin{itemize}
+        \item [(a)]
+              \lstinputlisting[language=Python, firstline=2, lastline =26]{Homework2frozen.md}
 
-          \lstinputlisting[firstline=29, lastline =40]{Homework2frozen.md}
-          My conjecture is that $f(n)$ will be prime for all $n$.
-    \item [(b)]
-          \lstinputlisting[language=Python, firstline=44, lastline =61]{Homework2frozen.md}
+              \lstinputlisting[firstline=29, lastline =40]{Homework2frozen.md}
+              My conjecture is that $f(n)$ will be prime for all $n$.
+        \item [(b)]
+              \lstinputlisting[language=Python, firstline=44, lastline =61]{Homework2frozen.md}
 
-          \lstinputlisting[firstline=64, lastline =64]{Homework2frozen.md}
-    \item [(c)] Let $f(x)=ax^2+bx+c$ with $a,b,c\in\Z$ and $a\neq 0$. Assume for contradiction that $f(n)$ for all $n$ be prime. Then let $n=c$. Then we can see
-          \begin{align*}
-            f(c) & = a(c)^2 + b(c) + c             \\
-                 & \equiv ac^2 + b(c) + c \pmod{c} \\
-                 & \equiv 0 \pmod{c}               \\
-          \end{align*}
-          By definition this means that $f(c)= c\cdot k$ for some $k$ but this means that $c|f(c)$, which means that $f(c)$ is not prime, so this is a contradiction. We can also see that this will be true for any $f(n)$ where $c|n$.
+              \lstinputlisting[firstline=64, lastline =64]{Homework2frozen.md}
+        \item [(c)] Let $f(x)=ax^2+bx+c$ with $a,b,c\in\Z$ and $a\neq 0$. Assume for contradiction that $f(n)$ for all $n$ be prime. Then let $n=c$. Then we can see
+              \begin{align*}
+                  f(c) & = a(c)^2 + b(c) + c             \\
+                       & \equiv ac^2 + b(c) + c \pmod{c} \\
+                       & \equiv 0 \pmod{c}               \\
+              \end{align*}
+              By definition this means that $f(c)= c\cdot k$ for some $k$ but this means that $c|f(c)$, which means that $f(c)$ is not prime, so this is a contradiction. We can also see that this will be true for any $f(n)$ where $c|n$.
 
-          So we can see that $f(n)$ will be composite for infinitely many positive integers $n$.
-    \item [(d)]
-  \end{itemize}
+              So we can see that $f(n)$ will be composite for infinitely many positive integers $n$.
+        \item [(d)]
+    \end{itemize}
 \end{solution}
 
 

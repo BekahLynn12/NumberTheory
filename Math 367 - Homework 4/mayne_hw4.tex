@@ -1,0 +1,656 @@
+\documentclass[11pt]{article} 
+\usepackage[margin=1in]{geometry} 
+\usepackage{wrapfig, amsmath,amsthm,amssymb, graphicx, multicol, array,seqsplit}
+\usepackage{microtype,numprint}
+\usepackage{siunitx}
+\usepackage{paracol}
+\usepackage{blkarray,multirow,multicol,booktabs,nicematrix}
+\usepackage{hhline}
+\usepackage{xfrac}
+\usepackage{xcolor}
+\usepackage[makeroom]{cancel}
+\usepackage{listings}
+\usepackage{mathtools}
+\setlength{\tabcolsep}{0pt}
+
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\F}{\mathbb{F}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\bline}{\noindent\rule[0.5ex]{\linewidth}{1pt}}
+\newcommand{\ndiv}{\nmid}
+\newcommand{\nequiv}{\not\equiv}
+
+
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+
+%Code listing style named "mystyle"
+\lstdefinestyle{mystyle}{
+  backgroundcolor=\color{backcolour}, commentstyle=\color{codegreen},
+  keywordstyle=\color{magenta},
+  numberstyle=\tiny\color{codegray},
+  stringstyle=\color{codepurple},
+  basicstyle=\ttfamily\footnotesize,
+  breakatwhitespace=false,         
+  breaklines=true,                 
+  captionpos=b,                    
+  keepspaces=true,                 
+  numbers=left,                    
+  numbersep=5pt,                  
+  showspaces=false,                
+  showstringspaces=false,
+  showtabs=false,                  
+  tabsize=2
+}
+
+%"mystyle" code listing set
+\lstset{style=mystyle}
+
+ \newcommand\foo[2]{%
+    \begin{minipage}{#1}
+    \seqsplit{#2}
+    \end{minipage}
+    }
+\newenvironment{myproof}[1][\proofname]{%
+  \begin{proof}[#1]$ $\par\nobreak\ignorespaces
+}{%
+  \end{proof}
+}
+\newenvironment{problem}[2][Problem]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+
+\newenvironment{myproblem}[1][Problem]{\begin{trivlist}
+    \item[\hskip \labelsep {\bfseries #1.}]}{\end{trivlist}}
+
+\newenvironment{solution}
+  {\renewcommand\qedsymbol{$~$}\begin{proof}[Solution]$ $\par\nobreak\ignorespaces}
+  {\end{proof}}
+
+
+
+\begin{document}
+
+\title{Homework 4}
+\author{Rebekah Mayne\\
+  Math 370, Fall 2024}
+\maketitle
+
+
+\section{(Page 61-62)}
+
+\begin{problem}{3}
+Classify the integers $2,3,..., 21$ as abundant, deficient or perfect.
+\end{problem}
+
+\begin{solution}
+  \setlength{\tabcolsep}{2pt}
+  {\small\begin{tabular}{l|l||l|l||l|l}
+      \multicolumn{2}{c||}{\textbf{Deficient}} & \multicolumn{2}{c||}{\textbf{Perfect}}      & \multicolumn{2}{c}{\textbf{Abundant}}                                                                                                       \\ \hline
+      2                                        & prime                                       &                                       &                                                &    &                                               \\
+      3                                        & prime                                       &                                       &                                                &    &                                               \\
+      4                                        & $\sigma(4)=\sigma(2^2)=7<8$                 &                                       &                                                &    &                                               \\
+      5                                        & prime                                       &                                       &                                                &    &                                               \\
+                                               &                                             & 6                                     & $\sigma(6)=\sigma(2)\cdot \sigma(3) = 12 =12 $ &    &                                               \\
+      7                                        & prime                                       &                                       &                                                &    &                                               \\
+      8                                        & $\sigma(8)=\sigma(2^3)=15<16$               &                                       &                                                &    &                                               \\
+      9                                        & $\sigma(9)=\sigma(3^2)=13<18$               &                                       &                                                &    &                                               \\
+      10                                       & $\sigma(10)=\sigma(2)\cdot \sigma(5)=18<20$ &                                       &                                                &    &                                               \\
+      11                                       & prime                                       &                                       &                                                &    &                                               \\
+                                               &                                             &                                       &                                                & 12 & $\sigma(12)=\sigma(3)\cdot \sigma(2^2)=28>24$ \\
+      13                                       & prime                                       &                                       &                                                &    &                                               \\
+      14                                       & $\sigma(14)=\sigma(2)\cdot \sigma(7)=24<28$ &                                       &                                                &    &                                               \\
+      15                                       & $\sigma(15)=\sigma(3)\cdot \sigma(5)=24<30$ &                                       &                                                &    &                                               \\
+      16                                       & $\sigma(16)=\sigma(2^4)=31<32$              &                                       &                                                &    &                                               \\
+      17                                       & prime                                       &                                       &                                                &    &                                               \\
+                                               & \                                           &                                       &                                                & 18 & $\sigma(18)=\sigma(2)\cdot \sigma(3^2)=39>36$ \\
+      19                                       & prime                                       &                                       &                                                &    &                                               \\
+                                               &                                             &                                       &                                                & 20 & $\sigma(20)=\sigma(2^2)\cdot \sigma(5)=42>40$ \\
+      21                                       & $\sigma(21)=\sigma(3)\cdot \sigma(7)=32<42$ &                                       &                                                &    &                                               \\
+    \end{tabular}}
+\end{solution}
+
+
+\begin{problem}{5}
+If $\sigma(n)=kn$, then $n$ is called a \textit{k-perfect number}. Verify that 672 is a 3-perfect and $2,178,540=2^2\cdot 3^2\cdot 5\cdot 7^2\cdot 13\cdot 19$ is 4-perfect.
+\end{problem}
+
+\begin{solution}
+  672 is a 3-perfect because we can see that
+
+  \[
+    \sigma(672)=\sigma(3) \cdot \sigma(2^5) \cdot \sigma(7)= 4 \cdot 63 \cdot 8 = 3 \cdot (3 \cdot 7 \cdot 5 \cdot 2^5) = 3(672) \;\; \checkmark
+  \]
+
+  The second one we can see
+  \begin{align*}
+    2,178,540         & =2^2\cdot 3^2\cdot 5\cdot 7^2\cdot 13\cdot 19                                                 \\
+    \sigma(2,178,540) & =\sigma(2^2)\cdot \sigma(3^2)\cdot \sigma(5)\cdot \sigma(7^2)\cdot \sigma(13)\cdot \sigma(19) \\
+    \sigma(2,178,540) & =7 \cdot 13 \cdot 6 \cdot 57 \cdot 14 \cdot 20                                                \\
+    \sigma(2,178,540) & =2^2(2^2 \cdot 3^2\cdot 5 \cdot 7^2 \cdot 13 \cdot  19)                                       \\
+    \sigma(2,178,540) & =4(2,178,540) \;\; \checkmark
+  \end{align*}
+\end{solution}
+
+
+
+\begin{problem}{6}
+Show that no number of the form $2^a3^b$ is 3-perfect.
+\end{problem}
+
+\begin{proof}
+  Let $n=2^a 3^b$, for contradiction, let this be 3-perfect, so $\sigma(n)=3n$, so we
+  \begin{align*}
+    \sigma(n)                                     & = 3n              \\
+    \sigma(2^a) \cdot \sigma(3^b)                 & = 2^a 3^{b+1}     \\
+    (2^{a+1} -1) \left(\frac{3^{b+1}-1}{2}\right) & = 2^a 3^{b+1}     \\
+    (2^{a+1} -1) (3^{b+1}-1)                      & = 2^{a+1} 3^{b+1} \\
+    2^{a+1}3^{b+1} - 2^{a+1} -3^{b+1} +1          & = 2^{a+1} 3^{b+1} \\
+    - 2^{a+1} -3^{b+1} +1                         & = 0               \\
+    2^{a+1} 3^{b+1}                               & = 1               \\
+  \end{align*}
+  But if this was true, then $a$ and $b$ would both need to be -1, which is not possible. So we can se that no number of the form $2^a3^b$ is 3-perfect.
+\end{proof}
+
+
+
+\begin{problem}{7}
+Let us say that $n$ is \textit{superperfect} if and only if $\sigma(\sigma(n))=2n$. Show that if $n=2^k$ and $2^{k+1}-1$ is prime, then $n$ is superperfect.
+\end{problem}
+
+\begin{proof}
+  Let $n=2^k$, and let $2^{k+1}-1$ be prime and look at $\sigma(\sigma(n))$,
+  \begin{align*}
+    \sigma(\sigma(n)) & = \sigma (2^{k+1} -1) \\
+                      & = 2^{k+1} -1 + 1      \\
+                      & = 2^{k+1}             \\
+                      & =  2(2^{k})           \\
+    \sigma(\sigma(n)) & =  2n                 \\
+  \end{align*}
+  This is the definition of superperfect, so we can see that $n$ is superperfect.
+\end{proof}
+
+
+
+
+\begin{problem}{13}
+Show that all even perfect numbers end in 6 or 8.
+\end{problem}
+
+\setlength{\columnseprule}{1pt}
+\def\columnseprulecolor{\color{black}}
+\begin{proof}
+  Let $n$ be any even perfect number. We know from class that every even perfect number is of the form $2^{k-1}(2^k-1)$ where $2^{k}-1$ is prime. In homework 2, we showed that for $2^{k}-1$ to be prime, $k$ must be prime. Lets look at two cases, where $k$ is even, and when $k$ is odd.
+
+  When $k$ is even and prime, $k=2$, so then $n=2^{2-1}(2^2-1)=2(4-1)=6$, so it ends in a 6.
+
+  The other case, when $k$ is odd, means that in $2^{k-1}$ $k-1$ is even. Then look mod 10.
+  \[
+    \begin{array}{c|c}
+      a & 2^{a}\pmod{10} \\
+      \hline
+      1 & 2 \pmod{10}    \\
+      2 & 4 \pmod{10}    \\
+      3 & 8 \pmod{10}    \\
+      4 & 6 \pmod{10}    \\
+      5 & 2 \pmod{10}    \\
+    \end{array}
+  \]
+  We can see this means that $2^{k-1}\equiv 4\pmod{10}$ if $k\equiv 3\pmod{4}$ or $2^{k-1}\equiv 6\pmod{10}$, when $k\equiv 1\pmod{4}$. Then, we can check each case alone,
+  \begin{multicols}{2}
+    $k\equiv 3\pmod{4}$
+    \hrule
+    \hspace{1pt}
+
+    We know $2^{k-1}\equiv 4\pmod{10}$, and we can see that $2^k-1 \equiv 7\pmod{10}$ so
+    \begin{align*}
+      (2^{k-1})(2^k-1) & \equiv 4 \cdot 7 & \pmod{10} \\
+      (2^{k-1})(2^k-1) & \equiv 8         & \pmod{10}
+    \end{align*}
+
+    \columnbreak
+    $k\equiv 1\pmod{4}$
+    \hrule
+    \hspace{1pt}
+
+    We know $2^{k-1}\equiv 6\pmod{10}$, and we can see that $2^k-1 \equiv 1\pmod{10}$ so
+    \begin{align*}
+      (2^{k-1})(2^k-1) & \equiv 6 \cdot 1 & \pmod{10} \\
+      (2^{k-1})(2^k-1) & \equiv 6         & \pmod{10}
+    \end{align*}
+  \end{multicols}
+\end{proof}
+
+
+
+
+\begin{problem}{14}
+If $n$ is an even perfect number and $n>6$, show that the sum of its digits is congruent to $1\pmod{9}$.
+\end{problem}
+
+\begin{proof}
+  Let $n$ be any even perfect number. We know from class that every even perfect number is of the form $2^{k-1}(2^k-1)$ where $2^{k}-1$ is prime. We also know that the sum of the digits of a number is equal to what that number is congruent to mod 9.
+
+  We know that $n=2^{k-1}(2^k-1)$ creates $n=6$ when $k=2$, so because $n>6$ we know $k>2$, and we know that $k$ will be odd.
+  Then, lets look at this mod 9.
+  We can see that $2^k\pmod{9}$ will repeat mod 6, as follows
+  \[
+    \begin{array}{c|c}
+      a & 2^{a}\pmod{9} \\
+      \hline
+      1 & 2 \pmod{9}    \\
+      2 & 4 \pmod{9}    \\
+      3 & 8 \pmod{9}    \\
+      4 & 7 \pmod{9}    \\
+      5 & 5 \pmod{9}    \\
+      6 & 1 \pmod{9}    \\
+    \end{array}
+  \]
+  So, then
+  \[
+    \begin{array}{c|c|c|c}
+      k \pmod{6} & 2^{k-1} \pmod{9} & (2^k-1)\pmod{9} & n\pmod{9} \\
+      \hline
+      3          & 4                & 7               & 1         \\
+      5          & 7                & 4               & 1         \\
+      1          & 1                & 1               & 1         \\
+    \end{array}
+  \]
+  So we can see that it is always congruent to 1 mod 9.
+\end{proof}
+
+\hrule
+~\newline
+
+For problems (2)-(4), the ``daughter" function $F$ is given, and you are asked to find the ``mother," $f$. That is, given the function $F(n)$, find the function $f(n)$ satisfying
+\[
+  F(n) = \sum_{d|n} f(d)
+\]
+You may find it easiest to define $f$ piecewise but you may define it however you wish, just make sure that your definition is clear from the PPF of the input.
+
+
+%2
+\section{}
+\begin{myproblem}
+  Find the ``mother'' of $F(n)=\mu(n)$
+\end{myproblem}
+
+\begin{solution}
+  Starting with cases, we can see that we have
+  \[
+    \mu(n) = \sum_{d|n} f(n)
+  \]
+
+  \[
+    \begin{matrix*}[l]
+      n=1                                                                \\
+      & \mu(1)   & = 1  & = f(1)                        & f(1)   & =1   \\
+      n=p                                                                \\
+      & \mu(p)   & = -1 & = f(1)+f(p)                   & f(p)   & = -2 \\
+      n=p^2                                                              \\
+      & \mu(p^2) & = 0  & = f(1)+f(p) + f(p^2)          & f(p^2) & = 1  \\
+      n=p^3                                                              \\
+      & \mu(p^3) & = 0  & = f(1)+f(p) + f(p^2) + f(p^3) & f(p^3) & = 0  \\
+    \end{matrix*}
+  \]
+  We can see the pattern of this means that
+  \[
+    f(p^k)=\begin{cases}
+      1  & \text{if $k=2$ or if $p^k=1$} \\
+      -2 & \text{if $k=1$}               \\
+      0  & \text{if $k>2$}
+    \end{cases}
+  \]
+  Then, overall we can say that
+  \[
+    f(n)=\begin{cases}
+      1      & \text{if $n=1$}                                          \\
+      (-2)^k & \text{if $n=p_1\cdots p_k \cdot p_{k+1}^2 \cdots p_r^2$} \\
+      0      & \text{if $p^3|n$}
+    \end{cases}
+  \]
+\end{solution}
+
+
+
+%3
+\section{}
+\begin{myproblem}
+  Find the ``mother'' of $F(n)=(\mu(n))^2$
+\end{myproblem}
+
+\begin{solution}
+  \begin{align*}
+    \mu * (\mu(n))^2   & = \sum_{d|n} (\mu(d))^2 \cdot \mu\left(\frac{n}{d}\right)                                                             \\
+    \intertext{We can just look at $p^k$}
+    \mu * (\mu(p^k))^2 & = \sum_{i=0}^{k} (\mu(p^i))^2 \cdot \mu(p^{k-i})                                                                      \\
+                       & = \mu(1)^2\mu(p^k) + \mu(p)^2\mu(p^{k-1}) + \mu(p^2)^2\mu(p^{k-2}) + \cdots + \mu(p^{k-1})^2\mu(p) + \mu(p^k)^2\mu(1) \\
+                       & = \mu(1)^2\mu(p^k) + \mu(p)^2\mu(p^{k-1}) + \mu(p^2)^2\mu(p^{k-2}) + \cdots + \mu(p^{k-1})^2\mu(p) + \mu(p^k)^2\mu(1) \\
+    \mu * (\mu(p^k))^2 & = \begin{cases}
+                             -1 & \text{for k=2}   \\
+                             0  & \text{otherwise}
+                           \end{cases}
+    \intertext{Then this extends to}
+    \mu * (\mu(n))^2   & = \begin{cases}
+                             1      & \text{when $n=1$}                      \\
+                             (-1)^k & \text{when $n=p_1^2p_2^2\cdots p_k^2$} \\
+                             0      & \text{anything else}                   \\
+                           \end{cases}
+  \end{align*}
+
+\end{solution}
+
+
+%4
+\section{}
+\begin{myproblem}
+  Find the ``mother'' of $F(n)=1$ if $n$ is odd, and 0 if $n$ is even.
+\end{myproblem}
+
+\begin{solution}
+  \begin{align*}
+    F * \mu(n)   & = \sum_{d|n} F(d) \cdot \mu\left(\frac{n}{d}\right)               \\
+    \intertext{We can just look at $p^k$ first assuming $p$ is odd}
+    F * \mu(p^k) & = \sum_{i=0}^k F(p^i) \cdot \mu(p^{k-i})                          \\
+    F * \mu(p^k) & = \sum_{i=0}^k 1 \cdot \mu(p^{k-i})                               \\
+    F * \mu(p^k) & = \begin{cases}
+                       -1 & \text{when $k=1$}        \\
+                       0  & \text{for anything else} \\
+                     \end{cases}                                   \\
+    \intertext{ If $p$ is ever even, then it is 0, so generalized}
+    F * \mu(n)   & = \begin{cases}
+                       1      & \text{when $n=1$}                                      \\
+                       (-1)^k & \text{when $n=p_1p_2\cdots p_k$ where all $p_i\neq 2$} \\
+                       0      & \text{if $2|n$ or $p^2|n$ for any $p$}
+                     \end{cases}
+  \end{align*}
+
+\end{solution}
+
+\hrule
+~\newline
+
+For problems (5)-(9) let $*$ denote the Dirichlet convolution operation. That is
+\[
+  f * g(n) = \sum_{d|n} f(d) \cdot g\left(\frac{n}{d}\right)
+\]
+Find the following functions (these should all be functions that you can easily write down or define):
+
+
+%5
+\section{}
+
+\begin{myproblem}
+  Find $\phi * \sigma$
+\end{myproblem}
+
+\begin{solution}
+  \begin{align*}
+    \phi * \sigma(n)   & = \sum_{d|n} \phi(d) \cdot \sigma\left(\frac{n}{d}\right)                                                   \\
+    \intertext{Look at just $p$}
+    \phi * \sigma(p)   & = \phi(p) \cdot \sigma(1)  + \phi(1) \cdot \sigma(p)                                                        \\
+                       & = p-1 + \frac{p^{2}-1}{p-1}                                                                                 \\
+                       & = p-1 + \frac{(p-1)(p+1)}{p-1}                                                                              \\
+                       & = p-1 + p+1                                                                                                 \\
+                       & = 2p                                                                                                        \\
+    \intertext{Look at just $p^2$}
+    \phi * \sigma(p^2) & = \sum_{d|p^2} \phi(d) \cdot \sigma\left(\frac{n}{d}\right)                                                 \\
+                       & = \phi(1) \cdot \sigma(p^2)+ \phi(p) \cdot \sigma(p)+ \phi(p^2) \cdot \sigma(1)                             \\
+                       & =  \frac{p^3-1}{p-1} + (p-1) \cdot \frac{p^{2}-1}{p-1} + p(p-1)                                             \\
+                       & =  p^2 + p + 1 + p^{2}-1 + p^2 - p                                                                          \\
+                       & =  3p^2                                                                                                     \\
+    \intertext{Look at just $p^3$}
+    \phi * \sigma(p^3) & = \sum_{d|p^3} \phi(d) \cdot \sigma\left(\frac{n}{d}\right)                                                 \\
+                       & = \phi(1) \cdot \sigma(p^3)+ \phi(p) \cdot \sigma(p^2)+\phi(p^2) \cdot \sigma(p) +\phi(p^3) \cdot \sigma(1) \\
+                       & =  \frac{p^{4}-1}{p-1} + (p-1)\cdot \frac{p^{3}-1}{p-1} + p(p-1)\cdot \frac{p^{2}-1}{p-1} + p^{2}(p-1)      \\
+                       & =  \frac{p^{4}-1}{p-1} + (p^{3}-1) + p\cdot (p^{2}-1) + p^{2}(p-1)                                          \\
+                       & =  \frac{p^{4}-1}{p-1} + p^{3}-1 + p^{3}-p + p^3-p^2                                                        \\
+                       & =  p^3+p^2+p+1 + 3p^{3}-p^2 -p-1                                                                            \\
+                       & =  4p^3                                                                                                     \\
+  \end{align*}
+  We can see that $\phi * \sigma(p^k)=(k+1)p^k$. So we can write that when $n=p_1^{e_1}\cdot p_2^{e_2}\cdots p_k^{e_k}$
+  \[
+    \phi * \sigma(n) = \prod_{i=1}^{k} (e_i+1)p_i^{e_i}
+  \]
+  Or we could also see it as $\tau(n)\cdot N(n)$.
+\end{solution}
+
+
+%6
+\section{}
+
+\begin{myproblem}
+  Find $\tau * \phi$
+\end{myproblem}
+
+\begin{solution}
+  \begin{align*}
+    \tau * \phi(n)   & = \sum_{d|n} \tau(d) \cdot \phi\left(\frac{n}{d}\right)                                                   \\
+    \intertext{Look at just $p$}
+    \tau * \phi(p)   & =  \tau(1) \cdot \phi(p) + \tau(p) \cdot \phi(1)                                                          \\
+                     & = (p-1) + (1+1)                                                                                           \\
+                     & = p + 1                                                                                                   \\
+    \intertext{Look at just $p^2$}
+    \tau * \phi(p^2) & =  \tau(1) \cdot \phi(p^2) +\tau(p) \cdot \phi(p)  +  \tau(p^2) \cdot \phi(1)                             \\
+                     & = p(p-1) + (1+1)(p-1) + (2+1)                                                                             \\
+                     & = p^2-p + 2p-2 + 3                                                                                        \\
+                     & = p^2+p+1                                                                                                 \\
+    \intertext{Look at just $p^3$}
+    \tau * \phi(p^2) & =  \tau(1) \cdot \phi(p^3) +\tau(p) \cdot \phi(p^2) + \tau(p^2) \cdot \phi(p)  +  \tau(p^3) \cdot \phi(1) \\
+                     & = p^2(p-1) + (2)(p(p-1)) + (3)(p-1) + (4)                                                                 \\
+                     & = p^3-p^2 + 2p^2-2p + 3p-3 + 4                                                                            \\
+                     & = p^3+p^2+p+1                                                                                             \\
+  \end{align*}
+  So we can see that $\tau * \phi(p^k)=\sum_{i=0}^k p^{i}$. So we can write that when $n=p_1^{e_1}\cdot p_2^{e_2}\cdots p_k^{e_k}$
+  \[
+    \tau * \phi(n) = \prod_{i=1}^{k} \sum_{a=0}^{e_i} p_i^{a}
+  \]
+  However, this is the same as $\sigma(n)$.
+\end{solution}
+
+
+%7
+\section{}
+
+\begin{myproblem}
+  Find $N * N$
+\end{myproblem}
+
+\begin{solution}
+  \begin{align*}
+    N * N(n) & = \sum_{d|n} N(d) \cdot N\left(\frac{n}{d}\right) \\
+    \intertext{Look at just $p^k$}
+    N * N(p) & =  \sum_{i=0}^k N(p^{i}) \cdot N(p^{k-i})         \\
+             & =  \sum_{i=0}^k p^{i} \cdot p^{k-i}               \\
+             & =  \sum_{i=0}^k p^{k}                             \\
+             & =  (k+1) p^{k}                                    \\
+  \end{align*}
+  So we can write that when $n=p_1^{e_1}\cdot p_2^{e_2}\cdots p_k^{e_k}$
+  \[
+    N * N(n) = \prod_{i=1}^{k} (e_i+1)p_i^{e_i}
+  \]
+  Or we could also see it as $\tau(n)\cdot N(n)$.
+\end{solution}
+
+
+%8
+\section{}
+
+\begin{myproblem}
+  Find $\phi * 1$
+\end{myproblem}
+
+\begin{solution}
+  \begin{align*}
+    \phi * 1(n)   & = \sum_{d|n} \phi(d) \cdot 1\left(\frac{n}{d}\right) \\
+    \intertext{Look at just $p^k$}
+    \phi * 1(p^k) & =  \sum_{d|p^k} \phi(d) \cdot 1                      \\
+                  & =  \phi(1) + \phi(p) + \phi(p^2) +\cdots + \phi(p^k) \\
+                  & =1 + (p-1) + (p^2-p) + \cdots + (p^k-p^{k-1})        \\
+                  & =p^k                                                 \\
+  \end{align*}
+  So we can see that $\phi * 1(n)=n$ or simply the function $N$.
+\end{solution}
+
+
+
+%9
+\section{}
+
+\begin{myproblem}
+  Find $\sigma * \mu$
+\end{myproblem}
+
+\begin{solution}
+  \begin{align*}
+    \sigma * \mu(n)   & = \sum_{d|n} \sigma(d) \cdot \mu\left(\frac{n}{d}\right)                                                    \\
+    \intertext{Look at just $p$}
+    \sigma * \mu(p)   & =  \sum_{d|p} \sigma(d) \cdot \mu\left(\frac{n}{d}\right)                                                   \\
+                      & =  \sigma(1) \cdot \mu(p) + \sigma(p) \cdot \mu(1)                                                          \\
+                      & = -1 + \frac{p^2-1}{p-1}                                                                                    \\
+                      & = -1 + p + 1                                                                                                \\
+                      & = p                                                                                                         \\
+    \intertext{Look at just $p^2$}
+    \sigma * \mu(p^2) & =  \sum_{d|p^2} \sigma(d) \cdot \mu\left(\frac{n}{d}\right)                                                 \\
+                      & =  \sigma(1) \cdot \mu(p^2) + \sigma(p) \cdot \mu(p) + \sigma(p^2) \cdot \mu(1)                             \\
+                      & = 0  +  -1 \cdot \frac{p^2-1}{p-1} + \frac{p^3-1}{p-1}                                                      \\
+                      & = -(p+1) + (p^2+p+1)                                                                                        \\
+                      & = p^2
+    \intertext{Look at just $p^3$}
+    \sigma * \mu(p^3) & =  \sum_{d|p^3} \sigma(d) \cdot \mu\left(\frac{n}{d}\right)                                                 \\
+                      & =  \sigma(1) \cdot \mu(p^3) + \sigma(p) \cdot \mu(p^2) +\sigma(p^2) \cdot \mu(p)+  \sigma(p^3) \cdot \mu(1) \\
+                      & = 0 + 0 + \frac{p^3-1}{p-1} \cdot (-1) + \frac{p^4-1}{p-1}                                                  \\
+                      & = -(p^2+p+1)+(p^3+p^2+p+1)                                                                                  \\
+                      & = p^3
+  \end{align*}
+  So we can see that $\sigma * \mu(p^k)=p^k$, so $\sigma * \mu(n)=n$ or the function $N$.
+\end{solution}
+
+\hrule
+
+%10 
+\section{}
+
+\begin{myproblem}
+  Prove that there are infinitely many integers $n$ such that $\mu(n) + \mu(n+1)=0$.
+\end{myproblem}
+
+\begin{proof}
+  Assume to the contrary that we know all of the integers $n$ such that $\mu(n) + \mu(n+1)=0$ and that they are finite, so that $a$ is the largest possible integer where this is true. Then let $c>a$, and let $c+1$ be the square of any odd prime. meaning $c+1 = p^2$. Then, looking at this mod 4, we know that $p\equiv 1\pmod{4}$ or $p\equiv 3\pmod{4}$, and then $p^2=1\pmod{4}$ either way. Then,
+  \begin{align*}
+    c+1 & = 1 & \pmod{4} \\
+    c   & = 0 & \pmod{4} \\
+  \end{align*}
+  Meaning that $c$ is divisible by 4, and therefore $\mu(c)=0$, but we already knew that $\mu(c+1)=0$, meaning that we know that $a$ is not the largest, and therefore the set of integers is infinite.
+\end{proof}
+
+
+
+%11
+\section{}
+
+\begin{myproblem}
+  Prove that there are infinitely many integers $n$ such that $\mu(n)+\mu(n+1)+\mu(n+2)=0$.
+\end{myproblem}
+
+\begin{proof}
+  We can look at when they are all 0 due to a unique repeated prime factor in each, so we can create
+  \begin{align*}
+    n \equiv 0 \pmod{p_1^2}   \\
+    n+1 \equiv 0 \pmod{p_2^2} \\
+    n+2 \equiv 0 \pmod{p_3^2}
+  \end{align*}
+  By the Chinese Remainder Theorem, there exists a solution mod $p_1^2p_2^2p_3^2$, so we know that there are infinitely many solutions of integers.
+\end{proof}
+
+
+%12
+\section{}
+
+\begin{myproblem}
+  Prove that there are infinitely many integers $n$ such that $\mu(n)+\mu(n+1)=-1$.
+\end{myproblem}
+
+\begin{proof}
+  \textbf{Not Finished}
+\end{proof}
+
+
+%13
+\section{}
+
+\begin{myproblem}
+  Prove that
+  \[
+    \sum_{d|n} \frac{(\mu(d))^2}{\phi(d)} = \frac{n}{\phi(n)}
+  \]
+\end{myproblem}
+
+\begin{proof}
+  We want to start with
+  \[
+    \sum_{d|n} \frac{(\mu(d))^2}{\phi(d)}
+  \]
+  Any divisors with powers over 2 will be canceled by $\mu(d)=0$, so we only need to look at the divisors of the form $p_1\cdots p_k$. Then, since $\mu(d)$ is squared, all of the numerators we need to look at will be 1. So all we need to look at is
+  \[
+    \sum_{d^{\star}|n} \frac{1}{\phi(d)} \;\; \text{$d^{\star}$ is $d$ of the form $p_1\cdots p_k$}
+  \]
+  \textbf{Not Finished}
+\end{proof}
+
+
+%14
+\section{}
+
+\begin{myproblem}
+  Use Sage to find
+  \begin{itemize}
+    \item[(a)] The first 10 abundant numbers
+    \item[(b)] The relative frequency of abundance for the first $n$ positive integers, for $n=$100, 1000, 10000, 100000. That is, how many integers (out of $n$) are abundant.
+  \end{itemize}
+\end{myproblem}
+
+\begin{solution}
+  \begin{itemize}
+    \item [(a)]
+          \lstinputlisting[language=Python, firstline=2, lastline =24]{Homework4.md}
+    \item [(b)]
+    \item \lstinputlisting[language=Python, firstline=28, lastline =59]{Homework4.md}
+  \end{itemize}
+\end{solution}
+
+
+\hrule
+
+%15
+\section{(5 pts Extra Credit)}
+
+\begin{myproblem}
+  A positive integer $n$ is ``perfectly crazy'' if $\phi(n)^{\sigma(n)^{\tau(n)}} = n^2$. Find all perfectly crazy numbers.
+\end{myproblem}
+
+\begin{solution}
+
+\end{solution}
+
+
+%16
+\section{(5 pts Extra Credit)}
+
+\begin{myproblem}
+  Let $P(n)$ be the product of the positive integers which are $\leq n$ and relative prime to $n$. Prove that
+  \[
+    P(n) = n^{\phi(n)} \prod_{d|n} \left(\frac{d!}{d^d}\right)^{\mu(n/d)}
+  \]
+\end{myproblem}
+
+\begin{proof}
+
+\end{proof}
+
+
+\end{document}

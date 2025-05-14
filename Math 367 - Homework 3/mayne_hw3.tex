@@ -1,0 +1,918 @@
+\documentclass[11pt]{article} 
+\usepackage[margin=1in]{geometry} 
+\usepackage{wrapfig, amsmath,amsthm,amssymb, graphicx, multicol, array,seqsplit}
+\usepackage{microtype,numprint}
+\usepackage{siunitx}
+\usepackage{paracol}
+\usepackage{blkarray,multirow,multicol,booktabs}
+\usepackage{hhline}
+\usepackage{xfrac}
+\usepackage{xcolor}
+\usepackage[makeroom]{cancel}
+\usepackage{listings}
+\usepackage{mathtools}
+\setlength{\tabcolsep}{0pt}
+
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\F}{\mathbb{F}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\bline}{\noindent\rule[0.5ex]{\linewidth}{1pt}}
+\newcommand{\ndiv}{\nmid}
+\newcommand{\nequiv}{\not\equiv}
+
+
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+
+%Code listing style named "mystyle"
+\lstdefinestyle{mystyle}{
+  backgroundcolor=\color{backcolour}, commentstyle=\color{codegreen},
+  keywordstyle=\color{magenta},
+  numberstyle=\tiny\color{codegray},
+  stringstyle=\color{codepurple},
+  basicstyle=\ttfamily\footnotesize,
+  breakatwhitespace=false,         
+  breaklines=true,                 
+  captionpos=b,                    
+  keepspaces=true,                 
+  numbers=left,                    
+  numbersep=5pt,                  
+  showspaces=false,                
+  showstringspaces=false,
+  showtabs=false,                  
+  tabsize=2
+}
+
+%"mystyle" code listing set
+\lstset{style=mystyle}
+
+ \newcommand\foo[2]{%
+    \begin{minipage}{#1}
+    \seqsplit{#2}
+    \end{minipage}
+    }
+\newenvironment{myproof}[1][\proofname]{%
+  \begin{proof}[#1]$ $\par\nobreak\ignorespaces
+}{%
+  \end{proof}
+}
+\newenvironment{problem}[2][Problem]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+
+\newenvironment{myproblem}[1][Problem]{\begin{trivlist}
+    \item[\hskip \labelsep {\bfseries #1.}]}{\end{trivlist}}
+
+\newenvironment{solution}
+  {\renewcommand\qedsymbol{$~$}\begin{proof}[Solution]$ $\par\nobreak\ignorespaces}
+  {\end{proof}}
+
+
+
+\begin{document}
+
+\title{Homework 3}
+\author{Rebekah Mayne\\
+    Math 370, Fall 2024}
+\maketitle
+
+
+\section{(Page 40)}
+
+\begin{problem}{7}
+Solve $9x\equiv 4 \pmod{1453}$.
+\end{problem}
+
+\begin{solution}
+    We can look for solutions by doing the following
+    \begin{align*}
+        9 \stackrel{?}{|} 1453+4     & \rightarrow (1+4+5+7\equiv 8 \pmod{9})                          \rightarrow 9 \ndiv 1457  \\
+        9 \stackrel{?}{|} 1457+1453  & \rightarrow(2+9+1+0\equiv 3 \pmod{9})                           \rightarrow  9 \ndiv 2910 \\
+        9 \stackrel{?}{|} 2910+1453  & \rightarrow(4+3+6+3\equiv 7 \pmod{9})\rightarrow  9 \ndiv 4363                            \\
+        9 \stackrel{?}{|} 4363+1453  & \rightarrow(5+8+1+6\equiv 2 \pmod{9})\rightarrow  9 \ndiv 5816                            \\
+        9 \stackrel{?}{|} 5816+1453  & \rightarrow(7+2+6+9\equiv 6 \pmod{9})\rightarrow  9 \ndiv 7269                            \\
+        9 \stackrel{?}{|} 7269+1453  & \rightarrow(8+7+2+2\equiv 1 \pmod{9})\rightarrow  9 \ndiv 8722                            \\
+        9 \stackrel{?}{|} 8722+1453  & \rightarrow(1+0+1+7+5\equiv 5 \pmod{9})\rightarrow  9 \ndiv 10175                         \\
+        9 \stackrel{?}{|} 10175+1453 & \rightarrow(1+1+6+2+8\equiv 0 \pmod{9})\rightarrow  9 | 11628                             \\
+    \end{align*}
+    Then, we can see that $9(1282)=11628 \equiv 4 \pmod{1453}$. So $x\equiv 1282 \pmod{1453}$.
+\end{solution}
+
+
+
+\begin{problem}{8}
+Solve $4x\equiv 9 \pmod{1453}.$
+\end{problem}
+
+\begin{solution}
+    We can look for solutions by doing the following (after the first, we can only check even multiples of 1453, because it has to be even to be divisible.)
+    \begin{align*}
+        4 \stackrel{?}{|} 1453+9       & \rightarrow (4 \ndiv 62)                          \rightarrow 4 \ndiv 1462 \\
+        4 \stackrel{?}{|} 2915+1453(2) & \rightarrow (4 | 68)                          \rightarrow 4 | 4368         \\
+    \end{align*}
+    Then, we can see that $4(1092)=4368 \equiv 9 \pmod{1453}$. So $x\equiv 1092 \pmod{1453}$.
+\end{solution}
+
+
+
+\begin{problem}{15}
+Find a positive integer such that half of it is a square, a third of it is a cube, and a fifth of it is a fifth power.
+\end{problem}
+
+\begin{solution}
+    Let $n$ be a positive integer. Then we want $a^2=\frac{n}{2}$, $b^3=\frac{n}{3}$ and $c^5 = \frac{n}{5}$. Or rewritten as $n=2a^2$, $n=3b^3$, and $n=5c^5$. Then we know that $3,2,5|n$ So we need to be able to find $i_1,i_2,i_3, j_1,j_2,j_3, k_1,k_2,k_3$ so that
+    \[
+        \begin{matrix*}[l]
+            n &=& (2^{2i_1+1})(3^{2j_1})(5^{2k_1})  &=& (2^{3i_2})(3^{3j_2+1})(5^{3k_2}) &=& (2^{5i_3})(3^{5j_3})(5^{5k_3+1}) \\
+        \end{matrix*}
+    \]
+    So we need to find $2i_1 + 1 = 3i_2 = 5i_3$, $2j_1 = 3j_2+1 = 5j_3$ and $2k_1 = 3k_2 = 5k_3+1$.
+
+    For the first, we can see that for $2i_1 + 1 = 3i_2 = 5i_3=e_1$, this means that $2i_1+1$ must be divisible by 3 and 5. So let $e_1=2i_1+1\equiv 0 \pmod{3}$ and $e_1 \equiv 0 \pmod{5}$. Then,
+    \[
+        \begin{matrix*}[l]
+            2i_1 + 1 \equiv 0 \pmod{3} && \\
+            2i_1 \equiv -1 \pmod{3} && \\
+            2i_1  \equiv 2 \pmod{3} && \\
+            i_1  \equiv 1 \pmod{3} &\rightarrow& i_1=3r_1 + 1\\
+            && e_1 = 2(3r_1+1) + 1 \\
+            && e_1 = 6r_1 + 3 \\
+            6r_1 + 3 \equiv 0 \pmod{5} &\leftarrow & \\
+            r_1 \equiv -3 \pmod{5} && \\
+            r_1 \equiv 2 \pmod{5} &\rightarrow& r_1= 5r_2 + 2 \\
+            && e_1 = 6r_1 + 3 \\
+            && e_1 = 6(5r_2+2) +3 \\
+            && e_1 = 30r_2 + 15 \\
+            e_1 \equiv 15 \pmod{30} &\leftarrow&\\
+        \end{matrix*}
+    \]
+    Then, we can let $e_1=45$. Then we want to find $e_2=2j_1 = 3j_2+1 = 5j_3$, this means that $e_2 = 3j_2 + 1 \equiv 0 \pmod{5}$ and $e_2\equiv 0 \pmod{2}$. So
+    \[
+        \begin{matrix*}[l]
+            3j_2 + 1 \equiv 0 \pmod{2} && \\
+            j_2 \equiv -1 \pmod{2} && \\
+            j_2 \equiv 1 \pmod{2} &\rightarrow & j_2 = 2r_1 + 1 \\
+            && e_2 = 3(2r_1+1)+1 \\
+            && e_2 = 6r_1 + 4 \\
+            6r_1 + 4 \equiv 0 \pmod{5} &\leftarrow& \\
+            r_1 - 1 \equiv 0 \pmod{5} && \\
+            r_1 \equiv 1 \pmod{5} &\rightarrow& r_1 = 5r_2 + 1 \\
+            && e_2 = 6(5r_2 + 1) + 4 \\
+            && e_2 = 30r_2 + 10 \\
+            e_2 \equiv 10 \pmod{30} &\leftarrow & \\
+        \end{matrix*}
+    \]
+    So lets let $e_2=40$. Then we want to find $e_3 =2k_1 = 3k_2 = 5k_3+1$, this means that $e_3= 5k_3+1 \equiv 0 \pmod{2}$ and $e_3\equiv 0 \pmod{3}$.
+    \[
+        \begin{matrix*}[l]
+            5k_3+1 \equiv 0 \pmod{2} && \\
+            k_3 \equiv -1 \pmod{2} && \\
+            k_3 \equiv 1 \pmod{2} &\rightarrow & k_3 = 2r_1 + 1 \\
+            && e_2 = 5(2r_1+1)+1 \\
+            && e_2 = 10r_1 + 6 \\
+            10r_1 + 6 \equiv 0 \pmod{3} &\leftarrow& \\
+            r_1 \equiv 0 \pmod{3} && \\
+            r_1 \equiv 0 \pmod{3} &\rightarrow& r_1 = 3r_2 + 1 \\
+            && e_2 = 10(3r_2+1) + 6  \\
+            && e_2 = 30r_2 + 16 \\
+            e_2 \equiv 16 \pmod{30} &\leftarrow & \\
+        \end{matrix*}
+    \]
+    So lets let $e_2=36$. Then,
+    \[
+        \begin{matrix*}[l]
+            (2^{45})(3^{40})(5^{36}) &=& (2^{2i_1+1})(3^{2j_1})(5^{2k_1})  &=& (2^{3i_2})(3^{3j_2+1})(5^{3k_2}) &=& (2^{5i_3})(3^{5j_3})(5^{5k_3+1}) \\
+            (2^{45})(3^{40})(5^{36}) &=& 2(2^{22}\cdot 3^{20}\cdot 5^{18})^2  &=& 3(2^{15}\cdot 3^{13}\cdot 5^{12})^3 &=& 5(2^{9}\cdot 3^{8}\cdot 5^{7})^5 \\
+        \end{matrix*}
+    \]
+    So our $n=2^{45}\cdot 3^{40}\cdot 5^{36}$.
+\end{solution}
+
+
+
+\begin{problem}{16}
+The three consecutive integers 48,49, and 50 each have a square factor.
+\begin{itemize}
+    \item [(a)] Find $n$ such that $3^2|n,4^2|n+1$ and $5^2|n+2$.
+    \item [(b)] Can you find $n$ such that $2^2|n,3^2|n+1$ and $4^2|n+2$?
+\end{itemize}
+\end{problem}
+
+\begin{solution}
+    \begin{itemize}
+        \item [(a)]
+              This can be rewritten as $n\equiv 0 \pmod{3^2}$, $n+1\equiv 0 \pmod{4^2}$ and $n+2 \equiv 0 \pmod{5^2}$. Or $n\equiv 0 \pmod{9}$, $n \equiv -1 \pmod{16}$ and $n \equiv -2 \pmod{25}$.
+              Then, we can do the following to solve for $n$,
+              \[
+                  \begin{matrix*}[l]
+                      n \equiv 0 \pmod{9} & \rightarrow & n=9k_1 \\
+                      9k_1 \equiv -1 \pmod{16} & \leftarrow &\\
+                      * k_1 \equiv 7 \pmod{16} &\rightarrow & k_1 = 16k_2 + 7 \\
+                      && n= 9(16k_2 + 7) \\
+                      && n= 144k_2 + 63 \\
+                      144k_2 + 63 \equiv -2 \pmod{25} &\leftarrow &\\
+                      -6k_2 + 13 \equiv 23 \pmod{25}&& \\
+                      -6k_2  \equiv 10 \pmod{25}&& \\
+                      6k_2  \equiv 15 \pmod{25}&& \\
+                      ** k_2 \equiv 15 \pmod{25}& \rightarrow & k_2 = 25k_3 + 15 \\
+                      && n= 144(25k_3 + 15) + 63 \\
+                      && n= 3600k_3 + 2160 + 63 \\
+                      && n= 3600k_3 + 2223 \\
+                      n\equiv 2223 \pmod{3600} \\
+                  \end{matrix*}
+              \]
+
+              $*$ work:
+              \[
+                  \begin{array}{r||*{9}{c}}
+                      k            & 0 & 1 & 2 & 3  & 4 & 5  & 6 & 7           & \cdots \\
+                      \hline
+                      9k \pmod{16} & 0 & 9 & 2 & 11 & 4 & 13 & 6 & 15\equiv -1 & \cdots \\
+                  \end{array}
+              \]
+              $**$ work:
+              \[
+                  \begin{array}{r||*{14}{c}}
+                      k            & 0  & 1  & 2  & 3      & 4  & 5 & 6  & 7  & 8  & 9 & 10 & 11 & 12 \\
+                      \hline
+                      6k \pmod{25} & 0  & 6  & 12 & 18     & 24 & 5 & 11 & 17 & 23 & 4 & 10 & 16 & 22 \\
+                      \\
+                      k            & 13 & 14 & 15 & \cdots                                            \\
+                      \hline
+                      6k \pmod{25} & 3  & 9  & 15 & \cdots                                            \\
+                  \end{array}
+              \]
+
+              So let $n=2223$, we can check that
+              \begin{align*}
+                  2223 / 3^2 = 247 \;\checkmark \\
+                  2224 / 4^2 = 139 \;\checkmark \\
+                  2225 / 5^2 = 89 \;\checkmark  \\
+              \end{align*}
+        \item [(b)] We know that $n \equiv 0 \pmod{4}$, and that $16k=n+2$ so we can check this out under mod 4
+              \begin{align*}
+                  16k & = n+2                 \\
+                  0   & \equiv 0 + 2 \pmod{4} \\
+                  0   & \equiv 2 \pmod{4}     \\
+              \end{align*}
+              This is not possible, so we cannot find a solution.
+    \end{itemize}
+\end{solution}
+
+
+\section{(Page 48)}
+
+\begin{problem}{2}
+What is the least residue of
+\begin{itemize}
+    \item [(a)] $5^{10} \pmod{11}$
+    \item [(b)] $5^{12} \pmod{11}$
+    \item [(c)] $1945^{12} \pmod{11}$
+\end{itemize}
+\end{problem}
+
+\begin{solution}
+    \begin{itemize}
+        \item [(a)] By FLT, because $5\bot 11$, and because $11$ is prime, we know that $5^{10}  \equiv 1\pmod{11}$.
+        \item [(b)] $5^{12}\equiv 5\cdot 5 \pmod{11}$ because 11 is prime, and $a^{p}\equiv a\pmod{p}$, so then
+              \[
+                  \begin{array}{rlc}
+                      5^{12} & \equiv 5\cdot 5 & \pmod{11} \\
+                             & \equiv 25       & \pmod{11} \\
+                      5^{12} & \equiv 3        & \pmod{11}
+                  \end{array}
+              \]
+        \item [(c)] By FLT, because $1945\bot 11$, and because $11$ is prime, we know that $1945^{10} \pmod{11} \equiv 1$, so we can see the following,
+              \[
+                  \begin{array}{rlc}
+                      1945^{12} & \equiv 1945^{10} \cdot 1945^2 & \pmod{11} \\
+                                & \equiv 1 \cdot 1945^2         & \pmod{11} \\
+                                & \equiv (1100+845)^2           & \pmod{11} \\
+                                & \equiv (770 + 75)^2           & \pmod{11} \\
+                                & \equiv (66 + 9)^2             & \pmod{11} \\
+                                & \equiv (9)^2                  & \pmod{11} \\
+                                & \equiv (-2)^2                 & \pmod{11} \\
+                      1945^{12} & \equiv 4                      & \pmod{11} \\
+                  \end{array}
+              \]
+    \end{itemize}
+\end{solution}
+
+
+
+\begin{problem}{4}
+What are the last two digits of $7^{333}$
+\end{problem}
+
+\begin{solution}
+    Look at $7^{333}\pmod{100}$. Or we can rewrite it using the Chinese remainder theory and solve for what $7^{333}\pmod{25}$ and $7^{333}\pmod{4}$ and combine. Starting we can see
+    \[
+        \begin{array}{rlc}
+            7^{333} & \equiv \left(7^2\right)^{166} \cdot 7 & \pmod{25} \\
+                    & \equiv \left(49 \right)^{166} \cdot 7 & \pmod{25} \\
+                    & \equiv \left(-1 \right)^{166} \cdot 7 & \pmod{25} \\
+            7^{333} & \equiv 7                              & \pmod{25} \\
+        \end{array}
+    \]
+    and
+    \[
+        \begin{array}{rlc}
+            7^{333} & \equiv (-1)^{333} & \pmod{4} \\
+                    & \equiv -1         & \pmod{4} \\
+            7^{333} & \equiv 3          & \pmod{4} \\
+        \end{array}
+    \]
+    Then we want to solve for $x\equiv 3 \pmod{4}$ and $x\equiv 7\pmod{25}$ as follows,
+    \[
+        \begin{matrix*}[l]
+            x \equiv 3 \pmod{4} &\rightarrow & x=4k_1 +3 \\
+            4k_1 + 3 \equiv 7 \pmod{25} &\leftarrow & \\
+            4k_1 \equiv 4 \pmod{25} && \\
+            k_1 \equiv 1 \pmod{25} & \rightarrow &k_1 = 25k_2 +1\\
+            && x=4(25k_2+1) + 3 \\
+            && x= 100k_2 +4 + 3 \\
+            && x= 100k_2 + 7 \\
+            x \equiv 7 \pmod{100} &\leftarrow& \\
+            7^{333} \equiv 7 \pmod{100} && \\
+        \end{matrix*}
+    \]
+    So we can see that the last two digits of $7^{333}$ is 07.
+\end{solution}
+
+
+
+\begin{problem}{6}
+What is the remainder when $314^{162}$ is divided by 163?
+\end{problem}
+
+\begin{solution}
+    This can be rewritten as $314^{162} \pmod{163}$. Since 163 is prime, we can use FLT, so
+    \[
+        314^{162} \equiv 1\pmod{163}.
+    \]
+\end{solution}
+
+
+
+\begin{problem}{8}
+What is the remainder when $2001^{2001}$ is divided by 26?
+\end{problem}
+
+\begin{solution}
+    This can be rewritten as $2001^{2001} \pmod{26}$. Since 26 is not prime, we can't use FLT, but we can break it into $2001^{2001} \pmod{13}$ and $2001^{2001} \pmod{2}$ and use the remainder theorem as follows,
+    \[
+        \begin{array}{rlc}
+            2001^{2001} & \equiv 2001^{1200} \cdot 2001^{801}                                  & \pmod{13} \\
+                        & \equiv \left(2001^{12}\right)^{100} \cdot 2001^{720} \cdot 2001^{81} & \pmod{13} \\
+                        & \equiv 1 \cdot \left(2001^{12}\right)^{60} \cdot 2001^{81}           & \pmod{13} \\
+                        & \equiv 1 \cdot 2001^{72} \cdot 2001^{9}                              & \pmod{13} \\
+                        & \equiv (1300 + 701)^{9}                                              & \pmod{13} \\
+                        & \equiv (0 + 650 +51)^{9}                                             & \pmod{13} \\
+                        & \equiv (0 + 39 + 12)^{9}                                             & \pmod{13} \\
+                        & \equiv (-1)^{9}                                                      & \pmod{13} \\
+            2001^{2001} & \equiv -1                                                            & \pmod{13} \\
+        \end{array}
+    \]
+    Then,
+    \[
+        \begin{array}{rlc}
+            2001^{2001} & \equiv (1)^{2001} & \pmod{2} \\
+                        & \equiv 1          & \pmod{2} \\
+            2001^{2001} & \equiv -1         & \pmod{2} \\
+        \end{array}
+    \]
+    Since we have both $2001^{2001}\equiv -1 \pmod{13}$ and $2001^{2001}\equiv -1 \pmod{2}$, since $13\bot 2$ this means that
+    \[
+        2001^{2001}\equiv -1 \pmod{26}.
+    \]
+\end{solution}
+
+
+
+\section{(Page 55)}
+
+
+\begin{problem}{3}
+Calculate $\tau$ and $\sigma$ of $10115 = 5\cdot 7\cdot 17^2$ and $100115=5\cdot 20023$.
+\end{problem}
+
+\begin{solution}
+    \begin{itemize}
+        \item[10115] First we can start with
+              \begin{align*}
+                  \tau(10115) & = \tau(5) \cdot \tau(7) \cdot \tau(17^2) \\
+                              & = (2) \cdot (2) \cdot (3)                \\
+                  \tau(10115) & = 12                                     \\
+              \end{align*}
+              Then,
+              \begin{align*}
+                  \sigma(10115) & = \sigma(5) \cdot \sigma(7) \cdot \sigma(17^2)                 \\
+                                & = (5+1) \cdot (7+1) \cdot \bigg( \frac{17^{2+1}-1}{17-1}\bigg) \\
+                                & = (48) \cdot \bigg( \frac{17^{3}-1}{16}\bigg)                  \\
+                                & = (3) \cdot (4913-1)                                           \\
+                                & = (3) \cdot (4912)                                             \\
+                  \sigma(10115) & = 14736                                                        \\
+              \end{align*}
+
+        \item[100115] For this we start with
+              \begin{align*}
+                  \tau(100115) & = \tau(5) \cdot \tau{20023} \\
+                               & = (2) cdot (2)              \\
+                  \tau(100115) & = 4                         \\
+              \end{align*}
+              Then,
+              \begin{align*}
+                  \sigma(100115) & = \sigma(5) \cdot \sigma{20023} \\
+                                 & = (5+1) \cdot (20023+1)         \\
+                                 & = (6) \cdot (20024)             \\
+                  \sigma(100115) & = 120144                        \\
+              \end{align*}
+    \end{itemize}
+\end{solution}
+
+
+
+\begin{problem}{5}
+Show that $\sigma{n}$ is odd if $n$ is a power of two.
+\end{problem}
+
+\begin{proof}
+    Let $n$ be a power of two, that is for some positive integer $k$ $n=2^k$. Then we want to find if $n \pmod{2}$ is 0 or 1 to see if $\sigma{n}$ is even or odd.
+    \begin{align*}
+        \sigma(n) & = \sigma(2^k)           \\
+                  & = \frac{2^{k+1}-1}{2-1} \\
+                  & = 2^{k+1}-1             \\
+                  & \equiv 0 -1 \pmod{2}    \\
+        \sigma(n) & \equiv 1 \pmod{2}
+    \end{align*}
+    Since $\sigma(n) \equiv 1 \pmod{2}$ we know that $\sigma(n)$ is odd.
+\end{proof}
+
+
+
+\begin{problem}{7}
+What is the smallest integer $n$ such that $\tau(n)=8$? Such that $\tau(n)=10$?
+\end{problem}
+
+\begin{solution}
+    Given that $n=p_1^{e_1}\cdot p_2^{e_2} \cdots p_k^{e_k}$, we know that $\tau(n)=\prod^{k}_{i=1} (e_i+1)$. Then, if $\tau(n)=8$ we know that $8=2^3$, so we have one of the following: $(e_1+1)(e_2+1)(e_3+1)=(2)(2)(2)$, $(e_1+1)(e_2+1)=(4)(2)$, $(e_1+1)(e_2+1)=(2)(4)$ or $(e_1+1)=8$. Respectively, with the smallest primes possible (2, 3, and 5) this would be $n=(2)(3)(5) = 30$, $n=(2^3)(3)=24$, $n=(2)(3^3)=54$, or $n=(2^7)=128$. So we can see that for $\tau(n)=8$ the smallest possible $n$ is 24.
+
+    Then for $\tau(n)=10$, we know that $10=2\cdot 5$, so we have one of the following: $(e_1+1)(e_2+1)=(2)(5)$, $(e_1+1)(e_2+1)=(5)(2)$, or $(e_1+1)=(10)$. Respectively these are $n=(2)(3^4)=162$, $n=(2^4)(3)=48$ or $n=2^{9}=512$. So we can see that for $\tau(n)=10$, the smallest possible $n$ is 48.
+\end{solution}
+
+
+
+\begin{problem}{8}
+Does $\tau(n)=k$ have a solution for $n$ for each $k$?
+\end{problem}
+
+\begin{proof}
+    Given any positive integer $k$, we know we can find a solution for $\tau(n)=k$ where $n=2^{k-1}$, no matter what the $k$, we see that
+    \[
+        \tau(n) = \tau(2^{k-1}) = (k-1+1) = k
+    \]
+    So there is always a solution $n$ for each $k$.
+\end{proof}
+
+
+
+
+\begin{problem}{9}
+In 1644, Mersenne asked for a number with 60 divisors. Find one smaller than 10,000.
+\end{problem}
+
+\begin{solution}
+    We can see that $60=2^{2} \cdot 3 \cdot 5$, so based on the past solutions I may guess that the smallest $n's$ will be one of the following: $(e_1+1)(e_2+1)(e_3+1)=(5)(4)(3)$, $(e_1+1)(e_2+1)(e_3+1)=(6)(5)(2)$, or $(e_1+1)(e_2+1)(e_3+1)(e_4+1)=(5)(3)(2)(2)$. Those are respectively $n=(2^4)(3^3)(5^2)=(4)(27)(10^{2})=(108)(100)>10,000$, $n=(2^5)(3^4)(5^1)=(4^2)(3^4)(10)=(16)(81)(10)=(1296)(10)>10,000$, or $n=(2^4)(3^2)(5^1)(7^1)=(8)(9)(10)(7)=5040$. So an $n$ smaller than 10,000 with 60 divisors is 5040.
+\end{solution}
+
+
+
+
+\begin{problem}{10}
+Find infinitely many $n$ such that $\tau(n)=60$.
+\end{problem}
+
+\begin{solution}
+    Using the above calculation, $\tau(n)=60$ for all $n$ of the form
+    \[
+        p_a^4 \cdot p_b^3 \cdot p_c^2
+    \]
+    for any primes $p_1,p_2,$ and $p_3$. Since there are infinitely many primes, there are then infinitely many $n's$ as well.
+\end{solution}
+
+
+
+
+\begin{problem}{12}
+For which $n$ is $\sigma(n)$ odd?
+\end{problem}
+
+\begin{solution}
+    Let $\sigma(n)$ be odd, then we see
+    \begin{align*}
+        \sigma(n) & = \prod^{k}_{i=1} \bigg(\frac{p_i^{e_i+1}-1}{p_i-1}\bigg)
+    \end{align*}
+    For $\sigma(n)$ to be odd, all of the things in the product have to also be odd, so $\frac{p_i^{e_i+1}-1}{p_i-1}$ must be odd. First we will check for when $p_i$ is even, meaning $p_i=2$. In this case we have $\frac{2^{e_i+1}-1}{2-1}=2^{e_i+1}-1$ which must be odd by definition, so this will always be true.
+
+    Then, if $p_i$ is anything other than 2, we can see that for $\frac{p_i^{e_i+1}-1}{p_i-1}$ to be odd, that $\exists k$ where $k$ is odd, s.t.
+    \begin{align*}
+        p_i^{e_i+1}-1     & = k(p_i-1)             \\
+        p_i^{e_i+1}-1     & = kp_i-k               \\
+        p_i^{e_i+1}-kp_i  & = 1-k                  \\
+        p_i (p_i^{e_i}-k) & = 1-k                  \\
+        \intertext{Then, take it mod 2, to then see}
+        1 (1^{e_i}-1)     & \equiv 1- 1    \mod{2} \\
+        1^{e_i} - 1       & \equiv 0 \mod{2}       \\
+        1^{e_i}           & \equiv 1 \mod{2}       \\
+        (-1)^{e_i}        & \equiv 1 \mod{2}       \\
+    \end{align*}
+    This means that we can see that $e_i$ must be even.
+
+    So $\sigma{n}$ is odd only when $n$ has the form,
+    \[
+        n = 2^{e_1} \cdot p_1^{2e_2} \cdots p_k^{2e_k}.
+    \]
+\end{solution}
+
+
+\section{(Page 71)}
+
+\begin{problem}{1}
+Calculate $\phi(42)$, $\phi(420)$, and $\phi(4200)$.
+\end{problem}
+
+\begin{solution}
+    \begin{itemize}
+        \item [\textbf{42}]
+              Start with $42=2\cdot 3\cdot 7$, then
+              \begin{align*}
+                  \phi(42) & = 42 \left(1-\frac{1}{2}\right)\left(1-\frac{1}{3}\right)\left(1-\frac{1}{7}\right) \\
+                           & = (42)\left(\frac{1}{2}\right)\left(\frac{2}{3}\right)\left(\frac{6}{7}\right)      \\
+                           & = (1)(2)(6)                                                                         \\
+                  \phi(42) & = 12                                                                                \\
+              \end{align*}
+
+        \item [\textbf{420}]
+              Start with $420= 2^2 \cdot 3 \cdot 5 \cdot 7$, then
+              \begin{align*}
+                  \pi{420}  & = 420 \left(1-\frac{1}{2}\right)\left(1-\frac{1}{3}\right)\left(1-\frac{1}{5}\right)\left(1-\frac{1}{7}\right) \\
+                            & = (420)\left(\frac{1}{2}\right)\left(\frac{2}{3}\right)\left(\frac{4}{5}\right)\left(\frac{6}{7}\right)        \\
+                            & = (2) (1) (2) (4) (6)                                                                                          \\
+                            & = 24 \cdot 4                                                                                                   \\
+                  \phi(420) & = 96                                                                                                           \\
+              \end{align*}
+
+        \item [\textbf{4200}]
+              Start with $4200=2^3\cdot 3\cdot 5^2\cdot 7$, then
+              \begin{align*}
+                  \phi(4200) & = (4200) \left(1-\frac{1}{2}\right)\left(1-\frac{1}{3}\right)\left(1-\frac{1}{5}\right)\left(1-\frac{1}{7}\right) \\
+                             & = (420)\left(\frac{1}{2}\right)\left(\frac{2}{3}\right)\left(\frac{4}{5}\right)\left(\frac{6}{7}\right)           \\
+                             & = (20) (1) (2) (4) (6)                                                                                            \\
+                  \phi(4200) & = 960
+              \end{align*}
+    \end{itemize}
+\end{solution}
+
+
+
+\begin{problem}{3}
+Calculate $\phi$ of $10115=5\cdot 7\cdot 17^2$ and $100115=5\cdot 20023$.
+\end{problem}
+
+\begin{solution}
+    Start with $10115=5\cdot 7\cdot 17^2$, then
+    \begin{align*}
+        \phi(10115) & = (10115)\left(1-\frac{1}{5}\right)\left(1-\frac{1}{7}\right)\left(1-\frac{1}{17}\right) \\
+                    & = (10115)\left(\frac{4}{5}\right)\left(\frac{6}{7}\right)\left(\frac{16}{17}\right)      \\
+                    & = (17) (4) (6) (16)                                                                      \\
+        \phi(10115) & = 6528                                                                                   \\
+    \end{align*}
+    Then, start with $100115=5\cdot 20023$, then
+    \begin{align*}
+        \phi(100115) & = (100115)\left(1-\frac{1}{5}\right)\left(1-\frac{1}{20023}\right) \\
+                     & = (100115)\left(\frac{4}{5}\right)\left(\frac{20022}{20023}\right) \\
+                     & = (1) (4) (20022)                                                  \\
+        \phi(100115) & =  80088
+    \end{align*}
+\end{solution}
+
+
+
+\begin{problem}{7}
+Show that if $n$ is odd, then $\phi(4n)=2\phi(n)$.
+\end{problem}
+
+\begin{proof}
+    Let $n$ be odd. Then lets look at $\phi(4n)$,
+    \begin{align*}
+        \phi(4n) & = phi(2^2) \phi(n)                   \\
+                 & = 4\left(1-\frac{1}{2}\right)\phi(n) \\
+                 & = 4\left(\frac{1}{2}\right) \phi(n)  \\
+        \phi(4n) & = 2\phi(n).                          \\
+    \end{align*}
+\end{proof}
+
+
+
+\begin{problem}{14}
+Find four solutions of $\phi(n)=16$.
+\end{problem}
+
+\begin{solution}
+    Let $\phi(n)=16$, then let $n=p_1^{e_1}\cdots p_k^{e_k}$. For $\phi(n)=16$ then
+    \begin{align*}
+        \phi(n) & = n \prod^{k}_{i=1} \frac{p_i-1}{p_i}                       \\
+        \phi(n) & = n  \frac{\prod^{k}_{i=1} p_i-1}{\prod^{k}_{i=1} p_i}      \\
+        n       & = \phi(n) \frac{\prod^{k}_{i=1} p_i}{\prod^{k}_{i=1} p_i-1} \\
+        n       & = 16 \frac{\prod^{k}_{i=1} p_i}{\prod^{k}_{i=1} p_i-1}      \\
+        n       & = \frac{16}{\prod^{k}_{i=1} p_i-1}  \prod^{k}_{i=1} p_i     \\
+    \end{align*}
+    We need to find $r_i$ where $r_i=p_i-1$, we can see by above that $r_i|16$, and $r_i+1$ is prime, so we can list the divisors of 16:
+    \[
+        r_i = \{1, 2, 4, 8, 16\}
+    \]
+    Then check for primes in $r_i+1=p_i$
+    \[
+        r_i +1  = \{2, 3, 5, \cancel{9}, 17\}
+    \]
+    So our only possibilities for $r_i$ are $\{1,2,4,16\}$ and so we must have $p_i$ in $\{2,3,5,17\}$. Then, going back to our other formula for $\phi(n)$ we can see
+    \begin{align*}
+        \phi(n) & = p_1^{e_1-1} (p_1-1) \cdot p_2^{e_2-1} (p_2-1) \cdot p_3^{e_3-1} (p_3-1) \cdot p_4^{e_4-1} (p_4-1) \\
+        16      & = 2^{e_1-1} (2-1) \cdot 3^{e_2-1} (3-1) \cdot 5^{e_3-1} (5-1) \cdot 17^{e_4-1} (17-1)               \\
+    \end{align*}
+    We can see that because $16<17$, the only cases that 17 can be a factor are $17$ and $17\cdot 2$ $(2^0\cdot (1)=1)$, then look for
+    \[
+        16       = 2^{e_1-1} (2-1) \cdot 3^{e_2-1} (3-1) \cdot 5^{e_3-1} (5-1)
+    \]
+    We can see that $5^2>16$ so $e_3<2$, then we can also see that $3\ndiv 16$, so $e_2<2$ as well. Then we have a few possibilities,
+    \[
+        \begin{array}{ll|rl}
+            16 = 2^{e_1-1} (2-1) \cdot 2 \cdot 4 & \rightarrow e_1 = 2 & n= & 2^2 \cdot 3 \cdot 5 \\
+            16 = 2^{e_1-1} (2-1) \cdot 4         & \rightarrow e_1 = 3 & n= & 2^3 \cdot 5         \\
+            16 = 2^{e_1-1} (2-1) \cdot 2         & \rightarrow e_1 = 4 & n= & 2^4 \cdot 3         \\
+            16 = 2^{e_1-1} (2-1)                 & \rightarrow e_1 = 5 & n= & 2^5                 \\
+        \end{array}
+    \]
+    So the possibilities for $\phi(n)=16$ are $n=a$ where $a$ is in $\{2^2\cdot 3\cdot 5, 2^3\cdot 5, 2^4\cdot 3, 2^5, 17, 17 \cdot 2\}$
+\end{solution}
+
+
+
+\begin{problem}{15}
+Find all solutions of $\phi(n)=4$ and prove that there are no more.
+\end{problem}
+
+\begin{proof}
+    Using the same logic as above, we get to
+    \[
+        n       = \frac{4}{\prod^{k}_{i=1} p_i-1}  \prod^{k}_{i=1} p_i
+    \]
+    We need to find $r_i$ where $r_i=p_i-1$, we can see by above that $r_i|4$, and $r_i+1$ is prime, so we can list the divisors of 4:
+    \[
+        r_i = \{1, 2, 4\}
+    \]
+    Then check for primes in $r_i+1=p_i$
+    \[
+        r_i +1  = \{2, 3, 5\}
+    \]
+    So our only possibilities for $r_i$ are $\{1,2,4\}$ and so we must have $p_i$ in $\{2,3,5\}$. Then, going back to our other formula for $\phi(n)$ we can see
+    \begin{align*}
+        \phi(n) & = p_1^{e_1-1} (p_1-1) \cdot p_2^{e_2-1} (p_2-1) \cdot p_3^{e_3-1} (p_3-1) \cdot p_4^{e_4-1} (p_4-1) \\
+        4       & = 2^{e_1-1} (2-1) \cdot 3^{e_2-1} (3-1) \cdot 5^{e_3-1} (5-1)                                       \\
+    \end{align*}
+    Since $5>4$, we can only have $n=5$ or $n=2 \cdot 5$.
+    Moving on if 3 is a factor, we are left with
+    \begin{align*}
+        4   & = 2^{e_1-1} (2-1) \cdot 3^{e_2-1} (2) \\
+        \intertext{  Since $3^2>4$ then $e_2<2$, so we can only have }
+        4   & = 2^{e_1-1} \cdot 2                   \\
+        2   & = 2^{e_1-1}                           \\
+        e_1 & = 2                                   \\
+    \end{align*}
+    So we get $n=2^2\cdot 3$
+    If 3 is not a factor we have
+    \begin{align*}
+        4   & = 2^{e_1-1} (2-1) \\
+        4   & = 2^{e_1-1}       \\
+        e_1 & = 3               \\
+    \end{align*}
+    Then, $n=2^3$.
+
+    So all the possibilities for $n$ if $\phi(n)=4$ are $n=a$ where $a$ is in $\{2^3, 2^2\cdot 3, 2\cdot 5, 5\}$.
+\end{proof}
+
+
+%5
+\section{}
+
+\begin{myproblem}
+    Compute $\mu(n)$ for $n=1,2,..., 12$.
+\end{myproblem}
+
+\begin{solution}
+    \begin{itemize}
+        \item[\textbf{1:}]
+              $1=1^1$
+              \begin{align*}
+                  \mu(1) = 1
+              \end{align*}
+        \item[\textbf{2:}]
+              $2=2^1$
+              \begin{align*}
+                  \mu(2) & = (-1)^1 \\
+                  \mu(2) & = -1
+              \end{align*}
+        \item[\textbf{3:}]
+              $3=3^1$
+              \begin{align*}
+                  \mu(3) & = (-1)^1 \\
+                  \mu(3) & = -1
+              \end{align*}
+        \item[\textbf{4:}]
+              $4=2^2$
+              \begin{align*}
+                  \mu(4) & = 0
+              \end{align*}
+        \item[\textbf{5:}]
+              $5=5^1$
+              \begin{align*}
+                  \mu(5) & = (-1)^1 \\
+                  \mu(5) & = -1
+              \end{align*}
+        \item[\textbf{6:}]
+              $6=2^1 \cdot 3^1$
+              \begin{align*}
+                  \mu(6) & = (-1)^2 \\
+                  \mu(6) & = 1
+              \end{align*}
+        \item[\textbf{7:}]
+              $7 = 7^1$
+              \begin{align*}
+                  \mu(7) & = (-1)^1 \\
+                  \mu(7) & = -1
+              \end{align*}
+        \item[\textbf{8:}]
+              $8= 2^3$
+              \begin{align*}
+                  \mu(8) & = 0
+              \end{align*}
+        \item[\textbf{9:}]
+              $9=3^2$
+              \begin{align*}
+                  \mu(9) & = 0
+              \end{align*}
+        \item[\textbf{10:}]
+              $10=2^1 \cdot 5^1$
+              \begin{align*}
+                  \mu(10) & = (-1)^2 \\
+                  \mu(10) & = 1
+              \end{align*}
+        \item[\textbf{11:}]
+              $11 = 11^1$
+              \begin{align*}
+                  \mu(11) & = (-1)^1 \\
+                  \mu(11) & = 1
+              \end{align*}
+        \item[\textbf{12:}]
+              $12 = 2^2 \cdot 3^1$
+              \begin{align*}
+                  \mu(12) & = 0
+              \end{align*}
+    \end{itemize}
+\end{solution}
+
+
+
+%6
+\section{}
+\begin{myproblem}
+    Find all $n$, $25<n<40$ such that $\mu(n) =1$.
+\end{myproblem}
+
+\begin{solution}
+    All of the $n$ such that $\mu(n)=1$ are $n$ with an even number of factors that are all unique primes. So any primes are automatically disqualified. Then between 25 and 40, this would include
+    \[
+        \begin{array}{lll}
+            26 & =2 \cdot 13         & \checkmark \\
+            27 & = 3^2 \cdots        & \times     \\
+            28 & =2^2 \cdots         & \times     \\
+            30 & = 2 \cdot 3 \cdot 5 & \times     \\
+            32 & = 2^2 \cdots        & \times     \\
+            33 & = 3\cdot 11         & \checkmark \\
+            34 & = 2\cdot 17         & \checkmark \\
+            35 & = 5 \cdot 7         & \checkmark \\
+            36 & = 3^2 \cdots        & \times     \\
+            38 & = 2 \cdot 19        & \checkmark \\
+            39 & = 3 \cdot 13        & \checkmark \\
+        \end{array}
+    \]
+    So all $n$ that have $\mu(n)=1$ between $25<n<40$ are $\{26, 33, 34, 35, 38, 39\}$.
+\end{solution}
+
+
+%7
+\section{}
+\begin{myproblem}
+    Find all non-primes $n<50$ with $\mu(n)=-1$.
+\end{myproblem}
+
+\begin{solution}
+    Any non-primes $n<50$ with $\mu(n)=-1$ must have an odd non-zero number of unique primes, it cannot be 5 because the smallest number with 5 unique primes is $2310=2\cdot 3\cdot 5\cdot 7\cdot 11$. So it will only be numbers with exactly 3 unique primes, The largest prime it can be must have $2\cdot 3\cdot a <50$ so $a<8$. Then, there are 4 primes under 8 (2,3,5,7), so there is a total of ${4\choose 3} =4$ numbers that this could apply to: $2\cdot 3\cdot 5$, $2\cdot 3\cdot 7$, $2\cdot 5\cdot 7$, $3\cdot 5\cdot 7$, which is 30, 42, 70, 105. So there are only two numbers less than 50 that are non-primes with $\mu(n)=-1$ and they are 30 and 42.
+\end{solution}
+
+
+%8
+\section{}
+\begin{myproblem}
+    Prove that if $n$ is any positive integer, then $\mu(n)\cdot \mu(n+1)\cdot \mu(n+2)\cdot \mu(n+3)=0$.
+\end{myproblem}
+
+\begin{proof}
+    Let $n$ be any positive integer. If we think about $n, n+1, n+2$ and $n+3$, we can see that no matter what, if taken mod 4, one of these will be equivalent to 0 mod 4. Therefore, $\mu(n)\cdot \mu(n+1)\cdot \mu(n+2)\cdot \mu(n+3)=0$, since at least one of them must be divisible by 4, making it's $\mu$ equal to 0, and therefore the product must also be 0.
+\end{proof}
+
+
+%9
+\section{}
+\begin{myproblem}
+    A number with $k$ digits, all being 1, is called a \textit{repunit}. For example 11,11111, 111 are all repunits. Show that every odd prime except 5 divides some repunit. \big(\textbf{Hint:} all repunits can always be expressed in the form $\frac{10^k-1}{9}$\big)
+\end{myproblem}
+
+\begin{proof}
+    Assume to the contrary, that $\exists p$ where $p$ is prime an $p\neq 2,5$, and it does \textbf{not} divide any repunit.
+
+    When $p\neq 2,5$ then $p\bot 10$. Then look at one way to represent $p$ not dividing any repunit (let $k$ be any positive integer)
+    \[
+        \begin{array}{rll}
+            \frac{10^k-1}{9} & \nequiv 0 & \pmod{p} \\
+            10^k -1          & \nequiv 0 & \pmod{p} \\
+            10^k             & \nequiv 1 & \pmod{p} \\
+        \end{array}
+    \]
+    But this is not possible since we know that $10^{p-1}\equiv 1 \pmod{p}$ because $10\bot p$ so $p$ must divide $\frac{10^{p-1}-1}{9}$ which is a repunit. So all odd $p$ except 5 must divide at least one repunit.
+\end{proof}
+
+
+
+%10 
+\section{Extra Credit}
+\begin{myproblem}
+    The notation $a\upuparrows b$ known as ``Knuth's up-arrow notation," denotes the number
+    \[
+        a^{a^{a^{a^{{...}^{a^{a}}}}}}
+    \]
+    with a tower of $a's$ occurring exactly $b$ times.
+
+    Compute the last two digits of $3\upuparrows 2000$. That is, the last two digits of
+    \[
+        3^{3^{3^{3^{{...}^{3^{3}}}}}}
+    \]
+    with a total of 2000 3's occurring in the exponent. (No sage allowed!!)
+\end{myproblem}
+
+\begin{solution}
+    To find the last two digits we want to take this mod 100.
+
+    First lets find $\phi(100)$, we know $100=2^2\cdot 5^2$,
+    \begin{align*}
+        \phi(100) & = 100 \left(1-\frac{1}{2}\right)\left(1-\frac{1}{5}\right) \\
+                  & = 100 \left(\frac{1}{2}\right)\left(\frac{4}{5}\right)     \\
+                  & = \frac{100}{2\cdot 5} (1)(4)                              \\
+                  & = (10)(4)                                                  \\
+        \phi(100) & = 40                                                       \\
+    \end{align*}
+
+    Then, we want to think of how many exponents of 3 to get close to 40, since we know $3^{40} \equiv 1 \pmod{m}$, so lets look on a small scale, thinking of finding the least residue of the exponents mod 40
+    \begin{align*}
+        3^{3^3} & \equiv (27)^3 \pmod{40}                        \\
+                & \equiv (27)^3 \pmod{40}                        \\
+                & \equiv -13^2 \cdot (-13 )\pmod{40}             \\
+                & \equiv 169 \cdot (-13) \pmod{40}               \\
+                & \equiv 9 \cdot( -13) \pmod{40}                 \\
+                & \equiv 9 \cdot (-3) + 9 \cdot (-10) \pmod {40} \\
+                & \equiv -27 + -10 + -80 \pmod{40}               \\
+                & \equiv -37 \pmod{40}                           \\
+                & \equiv 3 \pmod{40}                             \\
+    \end{align*}
+    Let's iterate this up to a divisor of 2000,
+    \begin{align*}
+        3^{3^{3^{3^{3}}}} & \equiv (3^3)^{3^{3^3}} \pmod{40} \\
+                          & \equiv (3^3)^3 \pmod{40}         \\
+                          & \equiv 3 \pmod{40}               \\
+    \end{align*}
+    So again on a small scale, we can see that for some $k$,
+    \begin{align*}
+        (3)^{3^{3^{3^{3^3}}}} & \equiv (3)^{40k + 3} \pmod{100}     \\
+                              & \equiv 3^{40k} \cdot 3^3 \pmod{100} \\
+        (3)^{3^{3^{3^{3^3}}}} & \equiv 3^{3} \pmod{100}             \\
+    \end{align*}
+    This means that we can reduce it iteratively down from $ 3^{3^{3^{3^{{...}^{3^{3}}}}}}$ with 2000 3s (in the exponent) to $ 3^{3^{3^{3^{{...}^{3^{3}}}}}}$ with 1996 3s to $ 3^{3^{3^{3^{{...}^{3^{3}}}}}}$ with 1992 3s to $ 3^{3^{3^{3^{{...}^{3^{3}}}}}}$ with 1988 3s, $\cdots$ to $ 3^{3^{3^{3^{3}}}}$ with four 3s, to $3$ with zero 3s.
+
+    So the last two digits of $3\upuparrows2000$ is 03.
+\end{solution}
+
+\end{document}
